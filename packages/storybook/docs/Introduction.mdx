@@ -1,0 +1,175 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# AI-First Design System
+
+Welcome to the AI-First Design System documentation! This comprehensive design system is built specifically for AI-powered products, providing everything you need to create intelligent, accessible, and beautiful user interfaces.
+
+## 🎯 What Makes This System AI-First?
+
+Unlike traditional design systems where AI features are added as afterthoughts, this system is **designed from the ground up** for AI interactions:
+
+- **Transparency by Design** - Clear indicators when AI is involved
+- **Explainability Built-In** - Components to explain AI decisions
+- **Streaming-Native** - Real-time token-by-token text generation
+- **Confidence Indicators** - Visualize AI certainty levels
+- **Error Handling** - Graceful degradation and fallback patterns
+
+## 🏗️ Architecture
+
+### Framework-Agnostic Web Components
+Built with [Lit](https://lit.dev/), our components work with:
+- ✅ React
+- ✅ Vue
+- ✅ Svelte
+- ✅ Vanilla JavaScript
+- ✅ Any web framework
+
+### Modern Tech Stack
+- **Web Components** - Native browser support
+- **TypeScript** - Full type safety
+- **Tailwind CSS** - Utility-first styling
+- **Vite** - Lightning-fast builds
+
+## 🎨 Design Principles
+
+Based on research from leading design systems:
+
+### 1. Transparency
+Users must always know when they're interacting with AI.
+
+**Reference:** [IBM Carbon for AI](https://carbondesignsystem.com/guidelines/carbon-for-ai/)
+
+### 2. Explainability
+AI decisions should be understandable through progressive disclosure.
+
+**Reference:** [SAP Fiori Explainable AI](https://experience.sap.com/fiori-design-web/explainable-ai/)
+
+### 3. Human-Centered
+AI enhances human capabilities, never replaces them.
+
+**Reference:** [PatternFly AI Guidelines](https://www.patternfly.org/patternfly-ai/ai-guidelines/)
+
+### 4. Contextual Assistance
+AI provides help when and where it's needed.
+
+**Reference:** [Emplifi Soul Design System](https://soul.emplifi.io/)
+
+### 5. User Control
+Users can always override AI decisions.
+
+**Reference:** [Microsoft HAX Toolkit](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+
+## 📦 Installation
+
+\`\`\`bash
+# Core components (framework-agnostic)
+npm install @ai-first-ds/core
+
+# React wrappers
+npm install @ai-first-ds/react
+
+# Vue wrappers
+npm install @ai-first-ds/vue
+
+# Design tokens
+npm install @ai-first-ds/tokens
+\`\`\`
+
+## 🚀 Quick Start
+
+### Web Components (Vanilla JavaScript)
+
+\`\`\`html
+<script type="module">
+  import '@ai-first-ds/core';
+</script>
+
+<ai-button variant="primary">Click me</ai-button>
+<ai-chat-message role="ai">Hello!</ai-chat-message>
+\`\`\`
+
+### React
+
+\`\`\`jsx
+import { AIButton, AIChatMessage } from '@ai-first-ds/react';
+
+function App() {
+  return (
+    <>
+      <AIButton variant="primary">Click me</AIButton>
+      <AIChatMessage role="ai">Hello!</AIChatMessage>
+    </>
+  );
+}
+\`\`\`
+
+## 📚 Component Categories
+
+### Base Components (AI-Enhanced)
+Standard UI components with AI-ready variants:
+- Buttons, Inputs, Badges
+- Tooltips, Modals, Dropdowns
+- And more...
+
+### AI-Specific Components
+Purpose-built for AI interactions:
+- **Chat Interface** - Complete conversational UI
+- **Streaming Text** - Token-by-token generation
+- **AI Labels** - Clear AI indicators
+- **Prompt Input** - Advanced prompt composer
+- **Skeleton Loaders** - AI-aware loading states
+- **Confidence Meters** - Visualize AI certainty
+
+## ♿ Accessibility First
+
+All components are built to WCAG 2.2 Level AA standards:
+- Keyboard navigation
+- Screen reader support
+- Proper ARIA attributes
+- Sufficient color contrast
+- Focus management
+
+**Reference:** [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
+
+## 🎨 Customization
+
+Extensive theming support:
+
+\`\`\`css
+:root {
+  --ai-primary-color: #your-brand-color;
+  --ai-font-family: 'Your Font', sans-serif;
+  --ai-border-radius: 8px;
+}
+\`\`\`
+
+Or use our Tailwind configuration:
+
+\`\`\`js
+import baseConfig from '@ai-first-ds/tokens/tailwind';
+
+export default {
+  ...baseConfig,
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+};
+\`\`\`
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](https://github.com/yourusername/ai-first-design-system/blob/main/CONTRIBUTING.md).
+
+## 📝 License
+
+MIT © AI First Design System Contributors
+
+## 🙏 Acknowledgments
+
+This system builds on the shoulders of giants:
+- [IBM Carbon Design System](https://carbondesignsystem.com/)
+- [PatternFly](https://www.patternfly.org/)
+- [Microsoft HAX Toolkit](https://www.microsoft.com/en-us/haxtoolkit/)
+- [SAP Fiori](https://experience.sap.com/fiori-design/)
+- [Radix UI](https://www.radix-ui.com/)
+

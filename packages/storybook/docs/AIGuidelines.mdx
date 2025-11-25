@@ -1,0 +1,192 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Guidelines/AI Design Principles" />
+
+# AI Design Principles
+
+These principles guide every component and pattern in the AI-First Design System.
+
+## 1. Transparency 🔍
+
+**Users must always know when AI is involved.**
+
+### Why It Matters
+Trust is fundamental to AI adoption. Users need to understand when they're interacting with AI-generated content or AI-assisted features.
+
+### Implementation
+- Use the `<ai-label>` component to mark AI-generated content
+- Include AI indicators on relevant components
+- Provide clear visual distinction for AI features
+
+### Example
+\`\`\`html
+<ai-button aiGenerated confidence="0.95">
+  AI Suggested Action
+</ai-button>
+
+<ai-label model="GPT-4">AI Generated</ai-label>
+\`\`\`
+
+### Reference
+- [IBM Carbon for AI](https://carbondesignsystem.com/guidelines/carbon-for-ai/)
+- [Microsoft HAX Guideline #1](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+
+---
+
+## 2. Explainability 💡
+
+**AI decisions should be understandable.**
+
+### Why It Matters
+Users need to understand *how* and *why* AI makes decisions, especially in high-stakes scenarios.
+
+### Implementation
+Use progressive disclosure (What/Why/How):
+1. **What** - Show the result
+2. **Why** - Explain the reasoning  
+3. **How** - Provide technical details (for experts)
+
+### Example
+\`\`\`html
+<!-- Coming soon: ai-explainability-panel -->
+<ai-explainability-panel level="what">
+  <div slot="what">This action was recommended based on your usage patterns.</div>
+  <div slot="why">You frequently perform similar actions at this time.</div>
+  <div slot="how">ML model: RandomForest, Confidence: 94%</div>
+</ai-explainability-panel>
+\`\`\`
+
+### Reference
+- [SAP Fiori Explainable AI](https://experience.sap.com/fiori-design-web/explainable-ai/)
+- [Microsoft HAX Guideline #7](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+
+---
+
+## 3. Human-Centered 👥
+
+**AI enhances humans, doesn't replace them.**
+
+### Why It Matters
+The best AI products augment human capabilities rather than attempting to replace human judgment.
+
+### Implementation
+- Design for collaboration, not automation
+- Keep humans in the loop for critical decisions
+- Provide manual overrides for all AI actions
+- Show AI suggestions as recommendations, not commands
+
+### Example
+\`\`\`html
+<ai-chat-message role="ai" showActions>
+  Based on your request, I suggest...
+  <button slot="actions">Accept</button>
+  <button slot="actions">Modify</button>
+  <button slot="actions">Reject</button>
+</ai-chat-message>
+\`\`\`
+
+### Reference
+- [PatternFly AI Guidelines](https://www.patternfly.org/patternfly-ai/ai-guidelines/)
+- [IDEO Design Thinking + AI](https://www.ideou.com/blogs/inspiration/ai-and-design-thinking)
+
+---
+
+## 4. Contextual Assistance 🎯
+
+**AI helps when and where needed.**
+
+### Why It Matters
+Interrupting users with unhelpful AI suggestions creates frustration. AI should be contextually relevant.
+
+### Implementation
+- Provide AI assistance at natural decision points
+- Make AI features discoverable but not intrusive
+- Allow users to summon AI help on demand
+- Learn from user behavior to improve relevance
+
+### Example
+\`\`\`html
+<ai-input aiSuggestions placeholder="Start typing...">
+  <!-- AI suggestions appear as ghost text -->
+</ai-input>
+
+<ai-prompt-input showTemplates>
+  <!-- Templates appear when relevant -->
+</ai-prompt-input>
+\`\`\`
+
+### Reference
+- [Emplifi Soul Design System](https://soul.emplifi.io/)
+- [Microsoft HAX Guideline #5](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+
+---
+
+## 5. User Control 🎛️
+
+**Users can override AI decisions.**
+
+### Why It Matters
+AI makes mistakes. Users must maintain agency and be able to correct or override AI actions.
+
+### Implementation
+- Provide clear affordances for rejection
+- Allow editing of AI-generated content
+- Include "undo" functionality
+- Never lock users into AI decisions
+
+### Example
+\`\`\`html
+<ai-chat-message role="ai" showActions>
+  Here's my response...
+  <div slot="actions">
+    <button>👍 Accept</button>
+    <button>✏️ Edit</button>
+    <button>🔄 Regenerate</button>
+    <button>👎 Reject</button>
+  </div>
+</ai-chat-message>
+\`\`\`
+
+### Reference
+- [Microsoft HAX Guideline #10](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+- [PatternFly AI Guidelines](https://www.patternfly.org/patternfly-ai/ai-guidelines/)
+
+---
+
+## Additional Considerations
+
+### Error Handling
+AI will fail. Design for it:
+- Clear error messages
+- Fallback options
+- Path to human support
+- Graceful degradation
+
+### Data Privacy
+- Be transparent about data usage
+- Provide clear privacy controls
+- Follow GDPR and relevant regulations
+- Allow data deletion
+
+### Performance
+- Show loading states
+- Stream responses when possible
+- Optimize for perceived performance
+- Set appropriate expectations
+
+### Bias & Fairness
+- Test with diverse user groups
+- Monitor for bias in outputs
+- Provide feedback mechanisms
+- Continuously improve
+
+---
+
+## Further Reading
+
+- [IBM Carbon for AI Guidelines](https://carbondesignsystem.com/guidelines/carbon-for-ai/)
+- [Microsoft HAX Toolkit (18 Guidelines)](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+- [SAP Fiori Explainable AI](https://experience.sap.com/fiori-design-web/explainable-ai/)
+- [PatternFly AI Guidelines](https://www.patternfly.org/patternfly-ai/ai-guidelines/)
+- [IDEO U: AI & Design Thinking](https://www.ideou.com/blogs/inspiration/ai-and-design-thinking)
+

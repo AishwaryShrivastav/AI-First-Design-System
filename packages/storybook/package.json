@@ -1,0 +1,27 @@
+{
+  "name": "@ai-first-ds/storybook",
+  "version": "0.1.0",
+  "description": "Storybook documentation for AI-First Design System",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@ai-first-ds/core": "workspace:*",
+    "@ai-first-ds/tokens": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.0.0",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/web-components": "^8.0.0",
+    "@storybook/web-components-vite": "^8.0.0",
+    "lit": "^3.1.2",
+    "storybook": "^8.0.0",
+    "vite": "^5.1.0"
+  }
+}
+
