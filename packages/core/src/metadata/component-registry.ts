@@ -21,6 +21,12 @@ import {
   aiStreamingTextMetadata,
   aiSkeletonMetadata,
 } from './additional-components.js';
+import {
+  aiPromptTemplatesMetadata,
+  aiVariantSelectorMetadata,
+  aiErrorRecoveryMetadata,
+  aiConfidenceMeterMetadata,
+} from './phase1-components.js';
 
 /**
  * AI Button component metadata
@@ -316,7 +322,7 @@ const aiChatMessageMetadata: ComponentMetadata = {
  * Component registry - add more components here
  */
 export const componentRegistry: ComponentRegistry = {
-  version: '0.1.0',
+  version: '0.2.0',
   generated: new Date().toISOString(),
   components: [
     aiButtonMetadata,
@@ -330,6 +336,11 @@ export const componentRegistry: ComponentRegistry = {
     aiLabelMetadata,
     aiStreamingTextMetadata,
     aiSkeletonMetadata,
+    // Phase 1: Critical 2024-2025 AI UX components
+    aiPromptTemplatesMetadata,
+    aiVariantSelectorMetadata,
+    aiErrorRecoveryMetadata,
+    aiConfidenceMeterMetadata,
   ],
   tokens: [
     // TODO: Import from tokens package
