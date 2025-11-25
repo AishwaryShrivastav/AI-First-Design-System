@@ -321,7 +321,7 @@ export const componentRegistry: ComponentRegistry = {
  * Get component by name
  */
 export function getComponentMetadata(name: string): ComponentMetadata | undefined {
-  return componentRegistry.components.find(c => c.name === name);
+  return componentRegistry.components.find((c: ComponentMetadata) => c.name === name);
 }
 
 /**
@@ -331,11 +331,11 @@ export function searchComponentMetadata(query: string): ComponentMetadata[] {
   const lowerQuery = query.toLowerCase();
 
   return componentRegistry.components.filter(
-    component =>
+    (component: ComponentMetadata) =>
       component.name.toLowerCase().includes(lowerQuery) ||
       component.displayName.toLowerCase().includes(lowerQuery) ||
       component.description.toLowerCase().includes(lowerQuery) ||
-      component.tags.some(tag => tag.toLowerCase().includes(lowerQuery))
+      component.tags.some((tag: string) => tag.toLowerCase().includes(lowerQuery))
   );
 }
 
@@ -343,5 +343,5 @@ export function searchComponentMetadata(query: string): ComponentMetadata[] {
  * Get components by category
  */
 export function getComponentsByCategory(category: string): ComponentMetadata[] {
-  return componentRegistry.components.filter(c => c.category === category);
+  return componentRegistry.components.filter((c: ComponentMetadata) => c.category === category);
 }

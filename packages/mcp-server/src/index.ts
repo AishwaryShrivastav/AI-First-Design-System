@@ -221,6 +221,10 @@ async function main() {
   server.setRequestHandler(CallToolRequestSchema, async request => {
     const { name, arguments: args } = request.params;
 
+    if (!args) {
+      throw new Error('Missing arguments');
+    }
+
     if (name === 'search_components') {
       const results = await searchComponents(args.query as string);
       return {
@@ -274,7 +278,9 @@ async function main() {
       }
 
       const framework = (args.framework as string) || 'vanilla';
-      const example = component.examples.find(ex => ex.framework === framework);
+      const example = component.examples.find(
+        (ex: { framework: string; code: string; description: string }) => ex.framework === framework
+      );
 
       if (!example) {
         return {

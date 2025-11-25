@@ -15,7 +15,7 @@ export function getComponentResources(): Array<{
   mimeType: string;
 }> {
   // Generate resources from registry
-  const resources = componentRegistry.components.map(component => ({
+  const resources = componentRegistry.components.map((component: ComponentMetadata) => ({
     uri: `ai-first://components/${component.name}`,
     name: `${component.displayName} Component`,
     description: component.description,
