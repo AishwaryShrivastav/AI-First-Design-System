@@ -13,6 +13,12 @@
 
 The AI-First Design System is a modern, framework-agnostic component library designed from the ground up for AI-powered products. Built with Web Components, styled with Tailwind CSS, and following industry-leading accessibility patterns from Radix UI.
 
+**AI-first guarantees**
+- **Research-backed:** every prop, slot, and pattern cites trusted guidance (Carbon for AI, Microsoft HAX, SAP Fiori, WAI-ARIA APG, WCAG 2.2). See [`docs/research-sources.md`](./docs/research-sources.md).
+- **Tool-friendly:** repo layout, commands, and expectations are optimized for AI coding/design assistants. See [`docs/ai-tooling.md`](./docs/ai-tooling.md).
+- **Human-control bias:** defaults favor user overrides, clear AI labels, and explainability.
+- **Fast to try:** install, run Storybook, or drop in the CDN build with two commands.
+
 ## ✨ Key Features
 
 - **🤖 AI-First by Design** - Purpose-built components for AI interactions, not retrofitted
@@ -57,7 +63,21 @@ Based on research from leading design systems:
 
 ## 🚀 Quick Start
 
-### Installation
+### Try it in 60 seconds
+
+```bash
+npm install
+npm run storybook
+```
+
+Or use the CDN for a zero-install trial:
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/@ai-first-ds/core@latest"></script>
+<ai-chat-message role="ai">Hello! How can I help you today?</ai-chat-message>
+```
+
+### Installation (apps)
 
 ```bash
 # Core components (framework-agnostic)
@@ -176,6 +196,9 @@ npm run storybook
 
 - [Component Documentation](https://your-storybook-url.com)
 - [AI Design Principles](./docs/ai-principles.md)
+- [Research-Backed References](./docs/research-sources.md)
+- [AI Tooling Guide](./docs/ai-tooling.md)
+- [Getting Started](./docs/getting-started.md)
 - [Accessibility Guide](./docs/accessibility.md)
 - [Theming Guide](./docs/theming.md)
 - [Contributing Guide](./CONTRIBUTING.md)

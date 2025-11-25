@@ -2,6 +2,12 @@
 
 Thank you for your interest in contributing! This guide will help you get started.
 
+## 🚦 Quick AI-first checklist
+
+- Read [`docs/ai-tooling.md`](./docs/ai-tooling.md) for repo navigation and expectations for AI-assisted edits.
+- Cite at least one source from [`docs/research-sources.md`](./docs/research-sources.md) when adding or changing a prop, slot, or pattern.
+- Default to human-control and transparency: surface AI labels, override options, and explainability slots where relevant.
+
 ## 🎯 Design Principles
 
 All contributions must adhere to our core AI-first design principles:

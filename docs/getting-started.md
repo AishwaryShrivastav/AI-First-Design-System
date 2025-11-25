@@ -2,6 +2,13 @@
 
 Welcome to the AI-First Design System! This guide will help you get up and running quickly.
 
+**Two-minute setup**
+1. `npm install`
+2. `npm run storybook`
+3. Open the local Storybook URL to browse components, props, and AI affordances.
+
+Prefer zero install? Drop in the CDN snippet shown below.
+
 ## Installation
 
 ### Package Manager
