@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "packages/*/src/**/*",
+    "packages/*/.storybook/**/*",
+    "packages/*/stories/**/*",
+    "packages/*/vite.config.ts",
+    "examples/**/*",
+    "tests/**/*",
+    "*.ts",
+    "*.js",
+    "*.cjs",
+    "*.mjs"
+  ],
+  "exclude": ["node_modules", "dist", "build", "coverage", "storybook-static"]
+}
