@@ -1,0 +1,89 @@
+# Continuous Integration Workflow
+# Runs tests, linting, and builds on every push and PR
+#
+# @see https://docs.github.com/en/actions
+
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run unit tests
+        run: npm test
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/coverage-final.json
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+  e2e:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run E2E tests
+        run: npx playwright test
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: playwright-report/
+
