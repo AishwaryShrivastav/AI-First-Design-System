@@ -10,6 +10,17 @@
  */
 
 import type { ComponentMetadata, ComponentRegistry } from './types.js';
+import {
+  aiInputMetadata,
+  aiBadgeMetadata,
+  aiPromptInputMetadata,
+  aiChatInterfaceMetadata,
+  aiExplainabilityPanelMetadata,
+  aiFeedbackMetadata,
+  aiLabelMetadata,
+  aiStreamingTextMetadata,
+  aiSkeletonMetadata,
+} from './additional-components.js';
 
 /**
  * AI Button component metadata
@@ -310,7 +321,15 @@ export const componentRegistry: ComponentRegistry = {
   components: [
     aiButtonMetadata,
     aiChatMessageMetadata,
-    // TODO: Add remaining 10 components
+    aiInputMetadata,
+    aiBadgeMetadata,
+    aiPromptInputMetadata,
+    aiChatInterfaceMetadata,
+    aiExplainabilityPanelMetadata,
+    aiFeedbackMetadata,
+    aiLabelMetadata,
+    aiStreamingTextMetadata,
+    aiSkeletonMetadata,
   ],
   tokens: [
     // TODO: Import from tokens package
