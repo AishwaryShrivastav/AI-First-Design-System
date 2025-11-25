@@ -1,0 +1,54 @@
+{
+  "name": "@ai-first-ds/root",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-First Design System - A comprehensive design system built for AI products",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=packages/core",
+    "build": "npm run build --workspaces --if-present",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "storybook": "npm run storybook --workspace=packages/storybook",
+    "build-storybook": "npm run build-storybook --workspace=packages/storybook",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.0",
+    "vitest": "^1.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-first-design-system.git"
+  },
+  "keywords": [
+    "design-system",
+    "ai",
+    "web-components",
+    "lit",
+    "tailwind",
+    "ai-first",
+    "ui-components",
+    "accessibility"
+  ],
+  "author": "AI First Design System Contributors",
+  "license": "MIT"
+}
+
