@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ai-first-ds/react": "workspace:*",
+    "@ai-first-ds/react": "file:../../packages/react",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -21,4 +21,3 @@
     "vite": "^5.1.0"
   }
 }
-

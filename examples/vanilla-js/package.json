@@ -9,10 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ai-first-ds/core": "workspace:*"
+    "@ai-first-ds/core": "file:../../packages/core"
   },
   "devDependencies": {
     "vite": "^5.1.0"
   }
 }
-

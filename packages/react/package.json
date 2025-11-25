@@ -20,7 +20,7 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@ai-first-ds/core": "workspace:*"
+    "@ai-first-ds/core": "file:../core"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -47,4 +47,3 @@
   },
   "license": "MIT"
 }
-
