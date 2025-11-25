@@ -98,19 +98,58 @@ The AI-First Design System is built as a monorepo containing multiple packages t
 - Tailwind integration
 - Platform-agnostic format
 
-### 4. Storybook Package (`@ai-first-ds/storybook`)
+### 5. MCP Server Package (`@ai-first-ds/mcp-server`)
 
-**Technology:** Storybook 8  
-**Purpose:** Interactive documentation  
-**Reference:** [Storybook Documentation](https://storybook.js.org/)
+**Technology:** Model Context Protocol SDK  
+**Purpose:** AI tool integration & auto-discovery  
+**Reference:** [Model Context Protocol](https://modelcontextprotocol.io/)
 
 #### Responsibilities
 
-- Component playground
-- Usage examples
-- Design guidelines documentation
-- Accessibility testing
-- Visual regression testing
+- Expose components as AI resources
+- Expose design tokens as AI resources
+- Provide structured metadata to AI agents
+- Enable auto-discovery of new components
+
+#### Key Features
+
+- Auto-discovery of `ai-*` components
+- Real-time metadata serving
+- Token system integration
+- Standardized AI tool interface
+
+## Auto-Discovery Architecture
+
+The system uses a metadata-driven architecture to ensure components are automatically discoverable by AI tools, documentation, and registries.
+
+```
+┌─────────────────┐      ┌──────────────────┐
+│  Component File │      │  Metadata File   │
+│ (ai-button.ts)  │◄─────┤ (ai-button.ts)   │
+└────────┬────────┘      └────────┬─────────┘
+         │                        │
+         │               ┌────────▼─────────┐
+         │               │ Component        │
+         └──────────────►│ Registry         │
+                         │ (registry.ts)    │
+                         └────────┬─────────┘
+                                  │
+                  ┌───────────────┼────────────────┐
+                  │               │                │
+          ┌───────▼──────┐ ┌──────▼───────┐ ┌──────▼───────┐
+          │  MCP Server  │ │  Storybook   │ │ Documentation│
+          │ (AI Tools)   │ │ (Playground) │ │ (Index)      │
+          └──────────────┘ └──────────────┘ └──────────────┘
+```
+
+### Discovery Mechanism
+
+1. **Definition**: Component defined with `@customElement` and metadata
+2. **Registration**: Metadata imported into central registry
+3. **Exposure**:
+   - MCP Server reads registry to create resources
+   - Storybook scans for `ai-*` tags
+   - Documentation generates indexes from metadata
 
 ## Design Decisions
 

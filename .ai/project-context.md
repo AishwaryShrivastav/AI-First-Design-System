@@ -53,6 +53,25 @@ Purpose-built for AI interactions:
 - `ai-streaming-text` - Token-by-token text
 - `ai-explainability-panel` - Progressive disclosure
 - `ai-feedback` - User feedback collection
+- `ai-prompt-templates` - Prompt guidance
+- `ai-variant-selector` - Generative variability
+- `ai-error-recovery` - Graceful fallback
+- `ai-confidence-meter` - Trust visualization
+
+## Auto-Discovery & Tooling
+
+### MCP Server
+
+- **Package**: `packages/mcp-server`
+- **Purpose**: Exposes components and tokens to AI tools
+- **Resources**: `ai-design-system://components`, `ai-design-system://tokens`
+- **Auto-Discovery**: Components with `ai-*` prefix and metadata are automatically exposed
+
+### Metadata System
+
+- **Location**: `packages/core/src/metadata/`
+- **Registry**: `component-registry.ts`
+- **Features**: Machine-readable props, events, accessibility, and research citations
 
 ## Key Design Decisions
 

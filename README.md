@@ -6,7 +6,10 @@
 
 **What**: Framework-agnostic Web Components for AI products  
 **Tech**: Lit + TypeScript + Tailwind CSS  
-**Why**: First design system built for AI from the ground up (not retrofitted)  
+**Why**: First design system built for AI from the ground up (not retrofitted)
+
+**Version**: 0.2.0  
+**Components**: 15
 **Install**: `npm install @ai-first-ds/core` or `@ai-first-ds/react`  
 **Docs**: Quick start below | [Full Guide](./docs/getting-started.md) | [Components](./.ai/component-index.md)
 

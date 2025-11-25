@@ -107,6 +107,45 @@
 - **File**: `packages/core/src/components/ai/ai-feedback.ts`
 - **Usage**: `<ai-feedback variant="detailed"></ai-feedback>`
 
+### ai-prompt-templates
+
+**Prompt guidance with categorized templates**
+
+- **Props**: `templates`, `categories`
+- **Events**: `template-select`
+- **File**: `packages/core/src/components/ai/ai-prompt-templates.ts`
+- **Research**: Google AI UX Patterns (2024), Microsoft HAX #11
+- **Usage**: `<ai-prompt-templates .templates="${templates}"></ai-prompt-templates>`
+
+### ai-variant-selector
+
+**Generative variability explorer**
+
+- **Props**: `variants`, `selectedId`, `mode` (carousel|list|grid)
+- **Events**: `variant-select`, `regenerate`
+- **File**: `packages/core/src/components/ai/ai-variant-selector.ts`
+- **Research**: Google AI UX Patterns (2024), Nielsen Norman Group (2024)
+- **Usage**: `<ai-variant-selector .variants="${variants}"></ai-variant-selector>`
+
+### ai-error-recovery
+
+**Graceful error handling with context**
+
+- **Props**: `error`, `suggestions`, `retryable`
+- **Events**: `retry`, `suggestion-click`
+- **File**: `packages/core/src/components/ai/ai-error-recovery.ts`
+- **Research**: Microsoft HAX #8, IBM Carbon for AI
+- **Usage**: `<ai-error-recovery error="Context lost" retryable></ai-error-recovery>`
+
+### ai-confidence-meter
+
+**Visual confidence indicator**
+
+- **Props**: `confidence`, `variant` (linear|circular), `showLabel`
+- **File**: `packages/core/src/components/ai/ai-confidence-meter.ts`
+- **Research**: IBM Carbon for AI (2024), Microsoft HAX #1
+- **Usage**: `<ai-confidence-meter confidence="0.85" variant="circular"></ai-confidence-meter>`
+
 ---
 
 ## Type Definitions

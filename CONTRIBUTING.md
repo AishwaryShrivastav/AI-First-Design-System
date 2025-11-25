@@ -23,6 +23,9 @@ All contributions must adhere to our core AI-first design principles:
 
 ## 📋 Requirements
 
+**Version**: 0.2.0  
+**Components**: 15
+
 Every component and contribution must include:
 
 1. **Accessibility** - WCAG 2.2 Level AA compliance
