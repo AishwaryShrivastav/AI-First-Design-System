@@ -1,0 +1,146 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please provide as much detail as possible.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve?
+      placeholder: As a developer building AI products, I need...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How should this feature work?
+      placeholder: Add a new component called AIProgressBar that shows AI processing progress...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What alternative solutions have you considered?
+      placeholder: Considered using a regular progress bar, but it doesn't communicate AI processing...
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What type of feature is this?
+      options:
+        - "New Component"
+        - "Component Enhancement"
+        - "New Pattern"
+        - "Design Token"
+        - "Documentation"
+        - "Developer Experience"
+        - "Accessibility"
+        - "Performance"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      description: Which package should this affect?
+      options:
+        - "@ai-first-ds/core"
+        - "@ai-first-ds/react"
+        - "@ai-first-ds/vue"
+        - "@ai-first-ds/svelte"
+        - "@ai-first-ds/tokens"
+        - "All packages"
+        - "Documentation"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example Usage
+      description: How would you like to use this feature?
+      render: tsx
+      placeholder: |
+        import { AIProgressBar } from '@ai-first-ds/react';
+        
+        <AIProgressBar
+          value={progress}
+          aiState="thinking"
+          showETA
+          cancellable
+        />
+
+  - type: textarea
+    id: design-principles
+    attributes:
+      label: AI Design Principles
+      description: How does this align with our AI-first principles?
+      value: |
+        - [ ] **Transparency**: Clear AI indicators
+        - [ ] **Explainability**: Users understand AI decisions
+        - [ ] **Human-Centered**: AI enhances humans
+        - [ ] **Contextual**: Help when needed
+        - [ ] **User Control**: Override capability
+      render: markdown
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links to similar implementations, research, or design systems
+      placeholder: |
+        - IBM Carbon: https://...
+        - Similar pattern in ChatGPT: ...
+        - Research paper: ...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - "Critical - Blocking my work"
+        - "High - Would significantly improve my workflow"
+        - "Medium - Nice to have"
+        - "Low - Minor improvement"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Are you willing to contribute?
+      options:
+        - label: I am willing to submit a PR to implement this feature
+        - label: I can help with design mockups
+        - label: I can help with documentation
+        - label: I can help with testing
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues and PRs
+          required: true
+        - label: I have reviewed the component catalog
+          required: true
+        - label: This feature aligns with AI-first design principles
+          required: true
+

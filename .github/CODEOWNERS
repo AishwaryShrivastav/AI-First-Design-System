@@ -1,0 +1,30 @@
+# Code Owners for AI-First Design System
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+* @AishwaryShrivastav
+
+# Core package
+/packages/core/ @AishwaryShrivastav
+
+# Design tokens
+/packages/tokens/ @AishwaryShrivastav
+
+# React package
+/packages/react/ @AishwaryShrivastav
+
+# Documentation
+/docs/ @AishwaryShrivastav
+/packages/storybook/ @AishwaryShrivastav
+*.md @AishwaryShrivastav
+
+# Configuration files
+/.github/ @AishwaryShrivastav
+/package.json @AishwaryShrivastav
+/tsconfig.json @AishwaryShrivastav
+
+# Tests
+/tests/ @AishwaryShrivastav
+*.test.ts @AishwaryShrivastav
+*.spec.ts @AishwaryShrivastav
+

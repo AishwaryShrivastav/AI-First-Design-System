@@ -50,3 +50,14 @@ pnpm-debug.log*
 *.temp
 .cache/
 
+# Scripts with secrets
+push-changes.sh
+*.sh
+!scripts/*.sh
+
+# Secrets and tokens
+*.token
+*.key
+.env.*
+!.env.example
+

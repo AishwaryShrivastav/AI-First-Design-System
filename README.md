@@ -4,6 +4,10 @@
 
 [![npm version](https://badge.fury.io/js/%40ai-first-ds%2Fcore.svg)](https://www.npmjs.com/package/@ai-first-ds/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/AishwaryShrivastav/AI-First-Design-System/actions/workflows/ci.yml/badge.svg)](https://github.com/AishwaryShrivastav/AI-First-Design-System/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/AishwaryShrivastav/AI-First-Design-System/branch/main/graph/badge.svg)](https://codecov.io/gh/AishwaryShrivastav/AI-First-Design-System)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/code_of_conduct-enforced-ff69b4.svg)](./CODE_OF_CONDUCT.md)
 
 ## 🎯 Overview
 

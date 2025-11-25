@@ -1,0 +1,42 @@
+labels: [showcase]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎨 Show & Tell
+        
+        Share what you've built with the AI-First Design System!
+
+  - type: textarea
+    id: project
+    attributes:
+      label: What did you build?
+      description: Tell us about your project
+      placeholder: I built an AI chatbot for...
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Link to your project (if public)
+      placeholder: https://...
+
+  - type: textarea
+    id: components
+    attributes:
+      label: Components Used
+      description: Which components did you use?
+      placeholder: |
+        - ai-chat-interface
+        - ai-prompt-input
+        - ai-feedback
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Feedback
+      description: Any feedback or suggestions?
+      placeholder: It would be great if...
+

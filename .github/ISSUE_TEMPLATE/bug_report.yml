@@ -1,0 +1,153 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear and concise description of what the bug is.
+      placeholder: When I click the AI button with confidence indicator, it...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Import AIButton component
+        2. Set aiGenerated prop to true
+        3. Click the button
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+      placeholder: The button should show the confidence indicator
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened
+      placeholder: The confidence indicator is not displayed
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Code Sample
+      description: Minimal code to reproduce the issue
+      render: tsx
+      placeholder: |
+        import { AIButton } from '@ai-first-ds/react';
+        
+        <AIButton aiGenerated confidence={0.95}>
+          Click me
+        </AIButton>
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      description: Which package is affected?
+      options:
+        - "@ai-first-ds/core"
+        - "@ai-first-ds/react"
+        - "@ai-first-ds/vue"
+        - "@ai-first-ds/svelte"
+        - "@ai-first-ds/tokens"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version are you using?
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Framework
+      description: What framework are you using?
+      options:
+        - "React"
+        - "Vue"
+        - "Svelte"
+        - "Vanilla JS"
+        - "Next.js"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: framework-version
+    attributes:
+      label: Framework Version
+      placeholder: "React 18.2.0"
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Browsers
+      description: Which browsers are affected?
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Mobile Safari
+        - Mobile Chrome
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Relevant environment details
+      value: |
+        - OS: [e.g., macOS 14.0]
+        - Node: [e.g., 18.0.0]
+        - npm: [e.g., 9.0.0]
+      render: markdown
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other context, screenshots, or information
+      placeholder: Add screenshots, error logs, or any other helpful information
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: I have provided a minimal code sample to reproduce the issue
+          required: true
+        - label: I have checked the documentation
+          required: true
+

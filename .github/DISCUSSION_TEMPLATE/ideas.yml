@@ -1,0 +1,34 @@
+labels: [enhancement, discussion]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Share Your Ideas
+        
+        We love hearing your ideas! Whether it's a new component, pattern, or improvement, we want to hear from you.
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your Idea
+      description: What's your idea?
+      placeholder: I think we should add...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: How would this be used in AI products?
+      placeholder: This would help when building...
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Examples or References
+      description: Any examples from other products or design systems?
+      placeholder: |
+        - Similar to X in ChatGPT
+        - Related to Y in IBM Carbon
+

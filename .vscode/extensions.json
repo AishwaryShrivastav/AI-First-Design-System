@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "lit-plugin.lit-plugin",
+    "ms-playwright.playwright",
+    "ZixuanChen.vitest-explorer",
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+    "GitHub.copilot",
+    "GitHub.copilot-chat"
+  ],
+  "unwantedRecommendations": []
+}
+
