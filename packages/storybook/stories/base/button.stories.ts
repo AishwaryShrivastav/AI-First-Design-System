@@ -4,12 +4,12 @@ import '@ai-first-ds/core/components/base/ai-button';
 
 /**
  * AI-enhanced button component with support for AI-generated actions and confidence indicators.
- * 
+ *
  * ## Accessibility
  * - Full keyboard support (Enter/Space)
  * - ARIA attributes
  * - Focus management
- * 
+ *
  * ## References
  * - [WCAG 2.2 Button Pattern](https://www.w3.org/WAI/WCAG22/)
  * - [ARIA Button Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/button/)
@@ -67,32 +67,28 @@ export const Secondary: Story = {
   args: {
     variant: 'secondary',
   },
-  render: args =>
-    html`<ai-button variant=${args.variant}>Secondary Button</ai-button>`,
+  render: args => html`<ai-button variant=${args.variant}>Secondary Button</ai-button>`,
 };
 
 export const Ghost: Story = {
   args: {
     variant: 'ghost',
   },
-  render: args =>
-    html`<ai-button variant=${args.variant}>Ghost Button</ai-button>`,
+  render: args => html`<ai-button variant=${args.variant}>Ghost Button</ai-button>`,
 };
 
 export const Danger: Story = {
   args: {
     variant: 'danger',
   },
-  render: args =>
-    html`<ai-button variant=${args.variant}>Delete</ai-button>`,
+  render: args => html`<ai-button variant=${args.variant}>Delete</ai-button>`,
 };
 
 export const Loading: Story = {
   args: {
     loading: true,
   },
-  render: args =>
-    html`<ai-button ?loading=${args.loading}>Processing...</ai-button>`,
+  render: args => html`<ai-button ?loading=${args.loading}>Processing...</ai-button>`,
 };
 
 export const AIGenerated: Story = {
@@ -119,4 +115,3 @@ export const AllVariants: Story = {
     </div>
   `,
 };
-

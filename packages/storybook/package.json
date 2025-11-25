@@ -9,8 +9,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@ai-first-ds/core": "workspace:*",
-    "@ai-first-ds/tokens": "workspace:*"
+    "@ai-first-ds/core": "*",
+    "@ai-first-ds/tokens": "*"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^8.0.0",
@@ -24,4 +24,3 @@
     "vite": "^5.1.0"
   }
 }
-

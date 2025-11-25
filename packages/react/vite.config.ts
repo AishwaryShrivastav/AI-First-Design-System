@@ -12,7 +12,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['lit'],
+      external: ['react', 'react-dom', '@ai-first-ds/core'],
       output: {
         preserveModules: true,
         preserveModulesRoot: 'src',

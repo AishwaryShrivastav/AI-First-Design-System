@@ -1,19 +1,19 @@
 /**
  * AI-First Design System - Core Package
- * 
+ *
  * A comprehensive, framework-agnostic design system built specifically for AI products.
- * 
+ *
  * @packageDocumentation
- * 
+ *
  * @see {@link https://lit.dev/ | Lit} for Web Components documentation
  * @see {@link https://www.w3.org/WAI/ARIA/apg/ | WAI-ARIA} for accessibility patterns
- * 
+ *
  * @example
  * ```html
  * <script type="module">
  *   import '@ai-first-ds/core';
  * </script>
- * 
+ *
  * <ai-button variant="primary">Click me</ai-button>
  * <ai-chat-message role="ai">Hello!</ai-chat-message>
  * ```

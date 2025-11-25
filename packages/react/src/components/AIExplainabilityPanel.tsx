@@ -12,4 +12,3 @@ export const AIExplainabilityPanel = createReactComponent<HTMLElement, AIExplain
   'ai-explainability-panel',
   ['level', 'collapsible', 'collapsed']
 );
-

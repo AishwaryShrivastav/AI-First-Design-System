@@ -16,6 +16,14 @@ export interface AIPromptInputProps {
 
 export const AIPromptInput = createReactComponent<HTMLElement, AIPromptInputProps>(
   'ai-prompt-input',
-  ['value', 'placeholder', 'disabled', 'loading', 'showTokenCount', 'maxTokens', 'multiline', 'showTemplates']
+  [
+    'value',
+    'placeholder',
+    'disabled',
+    'loading',
+    'showTokenCount',
+    'maxTokens',
+    'multiline',
+    'showTemplates',
+  ]
 );
-

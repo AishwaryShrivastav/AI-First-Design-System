@@ -4,32 +4,32 @@ import type { Confidence } from '../../utils/types';
 
 /**
  * AI-enhanced badge component for displaying labels, confidence scores, and AI indicators.
- * 
+ *
  * @element ai-badge
- * 
+ *
  * @slot - Badge content
- * 
+ *
  * @cssprop --ai-badge-bg - Background color
  * @cssprop --ai-badge-color - Text color
  * @cssprop --ai-badge-border - Border style
- * 
+ *
  * @prop {string} variant - Visual variant (info, success, warning, error, ai)
  * @prop {boolean} aiIndicator - Show AI gradient indicator
  * @prop {Confidence} confidence - AI confidence level to display
  * @prop {boolean} dot - Show a dot indicator
- * 
+ *
  * @example
  * ```html
  * <ai-badge variant="info">Beta</ai-badge>
  * <ai-badge aiIndicator confidence="0.95">AI Generated</ai-badge>
  * <ai-badge variant="success" dot>Online</ai-badge>
  * ```
- * 
+ *
  * @accessibility
  * - Uses semantic HTML
  * - Sufficient color contrast (WCAG AA)
  * - aria-label for confidence scores
- * 
+ *
  * @reference
  * - WCAG 2.2 Color Contrast: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum
  * - IBM Carbon for AI labels: https://carbondesignsystem.com/guidelines/carbon-for-ai/
@@ -107,7 +107,8 @@ export class AIBadge extends LitElement {
     }
 
     @keyframes pulse {
-      0%, 100% {
+      0%,
+      100% {
         opacity: 1;
       }
       50% {
@@ -160,10 +161,7 @@ export class AIBadge extends LitElement {
           ? html`
               <span class="confidence">
                 <span class="confidence-bar">
-                  <span
-                    class="confidence-fill"
-                    style="width: ${this.confidence * 100}%"
-                  ></span>
+                  <span class="confidence-fill" style="width: ${this.confidence * 100}%"></span>
                 </span>
                 ${Math.round(this.confidence * 100)}%
               </span>
@@ -179,4 +177,3 @@ declare global {
     'ai-badge': AIBadge;
   }
 }
-

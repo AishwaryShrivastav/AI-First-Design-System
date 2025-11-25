@@ -5,13 +5,13 @@ import '@ai-first-ds/core/components/ai/ai-chat-interface';
 
 /**
  * AI chat components for conversational interfaces.
- * 
+ *
  * ## Features
  * - Message bubbles (user/AI/system)
  * - Streaming text support
  * - Action buttons (copy, regenerate, feedback)
  * - Typing indicators
- * 
+ *
  * ## References
  * - [IBM Carbon Chat UI](https://carbondesignsystem.com/)
  * - [Modern AI chat patterns](https://www.chatgpt.com)
@@ -74,19 +74,14 @@ export const Conversation: Story = {
       <ai-chat-message role="user" timestamp="2:32 PM">
         Can you give me an example?
       </ai-chat-message>
-      <ai-chat-message role="ai" streaming>
-        Certainly! Let me provide...
-      </ai-chat-message>
+      <ai-chat-message role="ai" streaming> Certainly! Let me provide... </ai-chat-message>
     </div>
   `,
 };
 
 export const ChatInterface: Story = {
   render: () => html`
-    <ai-chat-interface
-      placeholder="Ask me anything about AI..."
-      style="--ai-chat-height: 500px"
-    >
+    <ai-chat-interface placeholder="Ask me anything about AI..." style="--ai-chat-height: 500px">
       <div slot="messages">
         <ai-chat-message role="ai">
           Hello! I'm your AI assistant. How can I help you today?
@@ -103,4 +98,3 @@ export const ChatInterface: Story = {
     </ai-chat-interface>
   `,
 };
-

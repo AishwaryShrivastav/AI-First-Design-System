@@ -227,4 +227,3 @@ Vote on features in [GitHub Discussions](https://github.com/AishwaryShrivastav/A
 
 **Last Updated:** November 25, 2025  
 **Maintainer:** [@AishwaryShrivastav](https://github.com/AishwaryShrivastav)
-

@@ -1,6 +1,6 @@
 /**
  * Tests for AIButton component
- * 
+ *
  * @vitest-environment jsdom
  */
 
@@ -77,4 +77,3 @@ describe('AIButton', () => {
     document.body.removeChild(button);
   });
 });
-

@@ -21,11 +21,13 @@ export const AIChatMessage = React.forwardRef<HTMLElement, AIChatMessageProps>(
       const element = elementRef.current;
       if (!element) return;
 
-      if (role !== undefined) (element as any).role = role;
-      if (streaming !== undefined) (element as any).streaming = streaming;
-      if (timestamp !== undefined) (element as any).timestamp = timestamp;
-      if (showActions !== undefined) (element as any).showActions = showActions;
-      if (error !== undefined) (element as any).error = error;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const customElement = element as any;
+      if (role !== undefined) customElement.role = role;
+      if (streaming !== undefined) customElement.streaming = streaming;
+      if (timestamp !== undefined) customElement.timestamp = timestamp;
+      if (showActions !== undefined) customElement.showActions = showActions;
+      if (error !== undefined) customElement.error = error;
     }, [role, streaming, timestamp, showActions, error]);
 
     useEffect(() => {
@@ -50,4 +52,3 @@ export const AIChatMessage = React.forwardRef<HTMLElement, AIChatMessageProps>(
 );
 
 AIChatMessage.displayName = 'AIChatMessage';
-

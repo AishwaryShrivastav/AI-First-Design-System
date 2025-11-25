@@ -25,13 +25,17 @@ All interactive components are fully keyboard accessible:
 ### 2. Screen Reader Support
 
 #### Semantic HTML
+
 We use semantic HTML elements wherever possible:
+
 - `<button>` for interactive elements
 - `<input>` for form fields
 - Proper heading hierarchy
 
 #### ARIA Attributes
+
 When semantic HTML isn't sufficient:
+
 - `role` attributes for custom elements
 - `aria-label` for context
 - `aria-describedby` for descriptions
@@ -39,7 +43,9 @@ When semantic HTML isn't sufficient:
 - `aria-busy` for loading states
 
 #### Live Regions
+
 AI-specific live regions:
+
 ```html
 <ai-chat-message role="ai" streaming>
   <!-- aria-live="polite" automatically added -->
@@ -52,6 +58,7 @@ AI-specific live regions:
 ### 3. Visual Accessibility
 
 #### Color Contrast
+
 All color combinations meet WCAG AA standards (4.5:1 minimum):
 
 - Text on backgrounds: 4.5:1+
@@ -63,13 +70,17 @@ Test with our provided contrasts in design tokens.
 **Reference:** [WCAG Contrast Requirements](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum)
 
 #### Focus Indicators
+
 Clear, visible focus indicators on all interactive elements:
+
 - 2px outline
 - High contrast
 - Offset for clarity
 
 #### Visual Indicators
+
 We don't rely on color alone:
+
 - Icons for states
 - Text labels
 - Patterns and shapes
@@ -77,11 +88,13 @@ We don't rely on color alone:
 ### 4. Motor Accessibility
 
 #### Large Touch Targets
+
 Minimum 44x44px touch targets on all interactive elements.
 
 **Reference:** [WCAG 2.2 Target Size](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum)
 
 #### No Timing Requirements
+
 - No timeout-based interactions
 - Pauseable animations
 - Cancellable AI operations
@@ -89,21 +102,24 @@ Minimum 44x44px touch targets on all interactive elements.
 ### 5. Cognitive Accessibility
 
 #### Clear Language
+
 - Simple, concise labels
 - Helpful error messages
 - Consistent terminology
 
 #### Progressive Disclosure
+
 - Don't overwhelm users
 - Reveal complexity gradually
 - Clear information hierarchy
 
 Example: AI Explainability Panel
+
 ```html
 <ai-explainability-panel level="what">
   <!-- Simple explanation first -->
   <div slot="what">This was recommended</div>
-  
+
   <!-- Deeper details on request -->
   <div slot="why">Because...</div>
   <div slot="how">Technical details...</div>
@@ -156,6 +172,7 @@ npx playwright test tests/accessibility/wcag.spec.ts
 ```
 
 **Tools Used:**
+
 - [axe-core](https://github.com/dequelabs/axe-core) - Industry standard
 - [Playwright](https://playwright.dev/) - E2E testing
 - [@storybook/addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y) - Storybook integration
@@ -166,7 +183,7 @@ We recommend manual testing with:
 
 - **Screen Readers**
   - NVDA (Windows)
-  - JAWS (Windows)  
+  - JAWS (Windows)
   - VoiceOver (macOS/iOS)
   - TalkBack (Android)
 
@@ -240,11 +257,13 @@ When contributing new components:
 ## Known Limitations
 
 ### Current Limitations
+
 - High contrast mode could be improved
 - Some animations can't be fully disabled
 - Voice control not yet optimized
 
 ### Planned Improvements
+
 - Enhanced high contrast mode (v0.2.0)
 - Respecting `prefers-reduced-motion` (v0.2.0)
 - Voice control optimizations (v0.3.0)
@@ -252,16 +271,19 @@ When contributing new components:
 ## Resources
 
 ### Guidelines
+
 - [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/)
 - [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
 - [Inclusive Components](https://inclusive-components.design/)
 
 ### Testing Tools
+
 - [axe DevTools](https://www.deque.com/axe/devtools/)
 - [WAVE Browser Extension](https://wave.webaim.org/extension/)
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 
 ### Screen Readers
+
 - [NVDA](https://www.nvaccess.org/) (Free, Windows)
 - [VoiceOver](https://www.apple.com/accessibility/voiceover/) (Built-in, macOS/iOS)
 - [TalkBack](https://support.google.com/accessibility/android/answer/6283677) (Built-in, Android)
@@ -275,4 +297,3 @@ When contributing new components:
 ---
 
 **Accessibility is a journey, not a destination. We're committed to continuous improvement.**
-

@@ -1,6 +1,6 @@
 /**
  * Common types used across the design system
- * 
+ *
  * @packageDocumentation
  */
 
@@ -11,14 +11,14 @@ export type Confidence = number;
 
 /**
  * Role in AI conversation
- * 
+ *
  * @reference Chat UI patterns from modern AI products (ChatGPT, Claude, Perplexity)
  */
 export type AIRole = 'user' | 'ai' | 'system';
 
 /**
  * AI processing state
- * 
+ *
  * @reference PatternFly AI Guidelines - https://www.patternfly.org/patternfly-ai/ai-guidelines/
  */
 export type AIState = 'idle' | 'thinking' | 'generating' | 'streaming' | 'complete' | 'error';
@@ -40,8 +40,7 @@ export type ThemeMode = 'light' | 'dark' | 'auto';
 
 /**
  * AI explainability disclosure level
- * 
+ *
  * @reference SAP Fiori Explainable AI - https://experience.sap.com/fiori-design-web/explainable-ai/
  */
 export type ExplainabilityLevel = 'what' | 'why' | 'how';
-

@@ -29,12 +29,6 @@
     ["class:\\s*?[\"'`]([^\"'`]*).*?[\"'`]", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   "testing.automaticallyOpenPeekView": "failureInVisibleDocument"
 }
-

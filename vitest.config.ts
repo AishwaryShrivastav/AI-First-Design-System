@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config';
 
 /**
  * Vitest configuration for AI-First Design System
- * 
+ *
  * @see https://vitest.dev/config/
  */
 export default defineConfig({
@@ -23,4 +23,3 @@ export default defineConfig({
     },
   },
 });
-

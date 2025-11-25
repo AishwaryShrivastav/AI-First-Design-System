@@ -37,24 +37,24 @@ For quick prototyping, you can use our CDN:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-First Design System</title>
-</head>
-<body>
-  <ai-button variant="primary">Click me</ai-button>
-  <ai-chat-message role="ai">Hello! How can I help you today?</ai-chat-message>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-First Design System</title>
+  </head>
+  <body>
+    <ai-button variant="primary">Click me</ai-button>
+    <ai-chat-message role="ai">Hello! How can I help you today?</ai-chat-message>
 
-  <script type="module">
-    import '@ai-first-ds/core';
-    
-    const button = document.querySelector('ai-button');
-    button.addEventListener('click', () => {
-      console.log('Button clicked!');
-    });
-  </script>
-</body>
+    <script type="module">
+      import '@ai-first-ds/core';
+
+      const button = document.querySelector('ai-button');
+      button.addEventListener('click', () => {
+        console.log('Button clicked!');
+      });
+    </script>
+  </body>
 </html>
 ```
 
@@ -73,9 +73,7 @@ function App() {
       <AIButton variant="primary" onClick={handleClick}>
         Click me
       </AIButton>
-      <AIChatMessage role="ai">
-        Hello! How can I help you today?
-      </AIChatMessage>
+      <AIChatMessage role="ai">Hello! How can I help you today?</AIChatMessage>
     </div>
   );
 }
@@ -118,16 +116,16 @@ Customize the design system by overriding CSS custom properties:
 :root {
   /* Primary colors */
   --ai-primary-color: #3b82f6;
-  
+
   /* Fonts */
   --ai-font-family: 'Inter', sans-serif;
-  
+
   /* Spacing */
   --ai-spacing-unit: 0.25rem;
-  
+
   /* Border radius */
   --ai-border-radius: 0.375rem;
-  
+
   /* Shadows */
   --ai-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
@@ -143,10 +141,7 @@ import baseConfig from '@ai-first-ds/tokens/tailwind';
 
 export default {
   ...baseConfig,
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}',
-    './node_modules/@ai-first-ds/**/*.js'
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './node_modules/@ai-first-ds/**/*.js'],
   theme: {
     extend: {
       ...baseConfig.theme.extend,
@@ -161,11 +156,7 @@ export default {
 All packages include full TypeScript definitions:
 
 ```typescript
-import type { 
-  ButtonVariant, 
-  AIRole, 
-  Confidence 
-} from '@ai-first-ds/core';
+import type { ButtonVariant, AIRole, Confidence } from '@ai-first-ds/core';
 
 const variant: ButtonVariant = 'primary';
 const role: AIRole = 'ai';
@@ -210,4 +201,3 @@ This design system is built on research and best practices from:
 - [SAP Fiori Explainable AI](https://experience.sap.com/fiori-design-web/explainable-ai/)
 - [PatternFly AI Guidelines](https://www.patternfly.org/patternfly-ai/ai-guidelines/)
 - [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
-

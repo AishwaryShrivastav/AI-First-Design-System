@@ -20,7 +20,7 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@ai-first-ds/core": "workspace:*"
+    "@ai-first-ds/core": "*"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -42,9 +42,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ai-first-design-system.git",
+    "url": "https://github.com/AishwaryShrivastav/AI-First-Design-System.git",
     "directory": "packages/react"
   },
   "license": "MIT"
 }
-

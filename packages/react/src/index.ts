@@ -1,14 +1,14 @@
 /**
  * AI-First Design System - React Package
- * 
+ *
  * React wrappers for web components
- * 
+ *
  * @packageDocumentation
- * 
+ *
  * @example
  * ```tsx
  * import { AIButton, AIChatMessage } from '@ai-first-ds/react';
- * 
+ *
  * function App() {
  *   return (
  *     <>
@@ -46,4 +46,3 @@ export type {
   ThemeMode,
   ExplainabilityLevel,
 } from '@ai-first-ds/core';
-

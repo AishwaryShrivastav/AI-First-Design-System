@@ -3,7 +3,7 @@ import '@ai-first-ds/core';
 
 /**
  * Storybook preview configuration
- * 
+ *
  * @see https://storybook.js.org/docs/configure/overview#configure-story-rendering
  */
 const preview: Preview = {
@@ -36,4 +36,3 @@ const preview: Preview = {
 };
 
 export default preview;
-

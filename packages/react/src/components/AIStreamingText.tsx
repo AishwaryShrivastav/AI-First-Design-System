@@ -13,4 +13,3 @@ export const AIStreamingText = createReactComponent<HTMLElement, AIStreamingText
   'ai-streaming-text',
   ['text', 'streaming', 'speed', 'showCursor']
 );
-

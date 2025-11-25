@@ -32,9 +32,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ai-first-design-system.git",
+    "url": "https://github.com/AishwaryShrivastav/AI-First-Design-System.git",
     "directory": "packages/tokens"
   },
   "license": "MIT"
 }
-

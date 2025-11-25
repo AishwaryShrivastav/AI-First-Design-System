@@ -97,26 +97,26 @@ import { customElement, property } from 'lit/decorators.js';
 
 /**
  * AI-aware button component
- * 
+ *
  * @element ai-button
- * 
+ *
  * @prop {string} variant - Button variant (primary, secondary, ghost)
  * @prop {boolean} loading - Show loading state
  * @prop {boolean} aiGenerated - Mark as AI-generated action
  * @prop {number} confidence - AI confidence level (0-1)
- * 
+ *
  * @slot - Button content
- * 
+ *
  * @fires click - Emitted when button is clicked
- * 
+ *
  * @cssprop --ai-button-bg - Background color
  * @cssprop --ai-button-text - Text color
- * 
+ *
  * @accessibility
  * - Keyboard accessible (Enter/Space)
  * - Screen reader support
  * - ARIA attributes
- * 
+ *
  * @reference
  * - WCAG 2.2: https://www.w3.org/WAI/WCAG22/quickref/
  * - ARIA Button: https://www.w3.org/WAI/ARIA/apg/patterns/button/
@@ -196,11 +196,7 @@ export const Primary: StoryObj = {
 };
 
 export const AIGenerated: StoryObj = {
-  render: () => html`
-    <ai-button aiGenerated confidence="0.95">
-      AI Suggested Action
-    </ai-button>
-  `,
+  render: () => html` <ai-button aiGenerated confidence="0.95"> AI Suggested Action </ai-button> `,
 };
 ```
 
@@ -222,6 +218,7 @@ The Button component is an AI-enhanced button that supports...
 - ARIA attributes
 
 References:
+
 - [WCAG 2.2 Button](https://www.w3.org/WAI/WCAG22/...)
 - [ARIA Button Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/button/)
 
@@ -282,4 +279,3 @@ When reporting issues, please include:
 ## 📜 License
 
 By contributing, you agree that your contributions will be licensed under the MIT License.
-

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Initial release of AI-First Design System
 - Core web components library (`@ai-first-ds/core`)
 - React wrapper package (`@ai-first-ds/react`)
@@ -21,29 +22,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 #### Core Components
+
 - **Base Components (AI-Enhanced)**
   - `ai-button`: Button with AI confidence indicators and loading states
   - `ai-input`: Input with AI suggestions and ghost text
   - `ai-badge`: Badge with confidence visualization
 
 #### AI-Specific Components
+
 - **Conversational**
   - `ai-chat-message`: Message bubbles with streaming support and actions
   - `ai-chat-interface`: Complete chat UI with input and history
-  
 - **Input & Prompts**
   - `ai-prompt-input`: Advanced prompt composer with templates and token counting
   - `ai-label`: Clear AI content indicators with model attribution
-  
 - **Loading & Feedback**
   - `ai-skeleton`: Context-aware skeleton loaders with shimmer
   - `ai-streaming-text`: Token-by-token text streaming with cursor
-  
 - **Transparency & Trust**
   - `ai-explainability-panel`: Progressive disclosure (What/Why/How)
   - `ai-feedback`: User feedback collection (simple and detailed)
 
 #### Design Tokens
+
 - Comprehensive color system with semantic tokens
 - Typography scales and font families
 - Spacing system based on 8pt grid
@@ -52,6 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tailwind CSS configuration
 
 #### Documentation
+
 - Complete README with quick start guide
 - Contributing guidelines
 - AI design principles documentation
@@ -60,6 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Component API documentation
 
 #### Testing
+
 - Unit tests with Vitest
 - E2E tests with Playwright
 - Accessibility tests (WCAG 2.2 Level AA)
@@ -67,6 +70,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code coverage reporting
 
 #### Infrastructure
+
 - Monorepo setup with npm workspaces
 - TypeScript configuration
 - ESLint and Prettier for code quality
@@ -87,4 +91,3 @@ All components and design decisions are backed by trusted sources:
 
 [Unreleased]: https://github.com/AishwaryShrivastav/AI-First-Design-System/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/AishwaryShrivastav/AI-First-Design-System/releases/tag/v0.1.0
-

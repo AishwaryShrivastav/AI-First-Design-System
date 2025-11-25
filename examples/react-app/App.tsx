@@ -1,13 +1,12 @@
 /**
  * React example application using AI-First Design System
- * 
+ *
  * @see https://github.com/AishwaryShrivastav/AI-First-Design-System
  */
 
 import React, { useState } from 'react';
 import {
   AIButton,
-  AIInput,
   AIBadge,
   AILabel,
   AIChatMessage,
@@ -19,7 +18,7 @@ import {
   AIFeedback,
 } from '@ai-first-ds/react';
 
-function App() {
+export function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [streamingText, setStreamingText] = useState('');
   const [isStreaming, setIsStreaming] = useState(false);
@@ -27,7 +26,7 @@ function App() {
   const handlePromptSubmit = (e: CustomEvent<{ value: string }>) => {
     console.log('Prompt submitted:', e.detail.value);
     setIsLoading(true);
-    
+
     // Simulate AI response
     setTimeout(() => {
       setIsLoading(false);
@@ -73,7 +72,9 @@ function App() {
           <AIBadge variant="info">Info</AIBadge>
           <AIBadge variant="success">Success</AIBadge>
           <AIBadge variant="warning">Warning</AIBadge>
-          <AIBadge aiIndicator confidence={0.87}>87% Confidence</AIBadge>
+          <AIBadge aiIndicator confidence={0.87}>
+            87% Confidence
+          </AIBadge>
           <AILabel model="GPT-4">AI Generated</AILabel>
         </div>
       </section>
@@ -81,9 +82,9 @@ function App() {
       {/* Chat Interface */}
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Chat Interface</h2>
-        <AIChatInterface 
+        <AIChatInterface
           placeholder="Ask me anything..."
-          onMessageSend={(e) => console.log('Message:', e.detail)}
+          onMessageSend={e => console.log('Message:', e.detail)}
         >
           <div slot="messages">
             <AIChatMessage role="ai">
@@ -93,7 +94,8 @@ function App() {
               What is machine learning?
             </AIChatMessage>
             <AIChatMessage role="ai" showActions timestamp="2:31 PM">
-              Machine learning is a subset of AI where systems learn from data without being explicitly programmed.
+              Machine learning is a subset of AI where systems learn from data without being
+              explicitly programmed.
             </AIChatMessage>
           </div>
         </AIChatInterface>
@@ -143,15 +145,13 @@ function App() {
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>AI Explainability</h2>
         <AIExplainabilityPanel level="why" collapsible>
-          <div slot="what">
-            This action was recommended based on your workflow.
-          </div>
-          <div slot="why">
-            You frequently perform similar actions at this time of day.
-          </div>
+          <div slot="what">This action was recommended based on your workflow.</div>
+          <div slot="why">You frequently perform similar actions at this time of day.</div>
           <div slot="how">
-            <strong>Model:</strong> RandomForest<br />
-            <strong>Confidence:</strong> 94%<br />
+            <strong>Model:</strong> RandomForest
+            <br />
+            <strong>Confidence:</strong> 94%
+            <br />
             <strong>Features:</strong> time_of_day, user_history, context
           </div>
         </AIExplainabilityPanel>
@@ -160,21 +160,28 @@ function App() {
       {/* Feedback */}
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>User Feedback</h2>
-        <AIFeedback 
-          detailed 
-          onFeedback={(e) => console.log('Feedback:', e.detail)}
-        />
+        <AIFeedback detailed onFeedback={e => console.log('Feedback:', e.detail)} />
       </section>
 
-      <footer style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #e5e7eb', textAlign: 'center', color: '#6b7280' }}>
+      <footer
+        style={{
+          marginTop: '3rem',
+          paddingTop: '2rem',
+          borderTop: '1px solid #e5e7eb',
+          textAlign: 'center',
+          color: '#6b7280',
+        }}
+      >
         <p>
-          Built with <a href="https://github.com/AishwaryShrivastav/AI-First-Design-System" style={{ color: '#3b82f6' }}>AI-First Design System</a>
+          Built with{' '}
+          <a
+            href="https://github.com/AishwaryShrivastav/AI-First-Design-System"
+            style={{ color: '#3b82f6' }}
+          >
+            AI-First Design System
+          </a>
         </p>
       </footer>
     </div>
-  </div>
-
-  <script type="module" src="./main.ts"></script>
-</body>
-</html>
-
+  );
+}

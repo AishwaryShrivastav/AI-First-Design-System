@@ -3,21 +3,21 @@ import { customElement, property, state } from 'lit/decorators.js';
 
 /**
  * Advanced prompt input component designed for AI interactions.
- * 
+ *
  * @element ai-prompt-input
- * 
+ *
  * @fires submit - Dispatched when user submits the prompt
  * @fires change - Dispatched when input value changes
  * @fires template-select - Dispatched when user selects a prompt template
- * 
+ *
  * @slot prefix - Content before the input
  * @slot suffix - Content after the input
  * @slot templates - Prompt template suggestions
- * 
+ *
  * @cssprop --ai-prompt-bg - Background color
  * @cssprop --ai-prompt-border - Border style
  * @cssprop --ai-prompt-radius - Border radius
- * 
+ *
  * @prop {string} value - Current input value
  * @prop {string} placeholder - Placeholder text
  * @prop {boolean} disabled - Whether input is disabled
@@ -26,22 +26,22 @@ import { customElement, property, state } from 'lit/decorators.js';
  * @prop {number} maxTokens - Maximum tokens allowed
  * @prop {boolean} multiline - Allow multi-line input (auto-expanding)
  * @prop {boolean} showTemplates - Show prompt templates
- * 
+ *
  * @example
  * ```html
- * <ai-prompt-input 
+ * <ai-prompt-input
  *   placeholder="Ask anything..."
  *   showTokenCount
  *   maxTokens="4000"
  * ></ai-prompt-input>
  * ```
- * 
+ *
  * @accessibility
  * - Keyboard shortcuts (Cmd/Ctrl + Enter to submit)
  * - Screen reader support
  * - Focus management
  * - ARIA labels for actions
- * 
+ *
  * @reference
  * - Modern AI product UX (ChatGPT, Claude, Perplexity)
  * - WAI-ARIA Combobox pattern: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
@@ -50,7 +50,7 @@ import { customElement, property, state } from 'lit/decorators.js';
 export class AIPromptInput extends LitElement {
   @property({ type: String }) value = '';
   @property({ type: String }) placeholder = 'Type your prompt...';
-  @property({ type: Boolean}) disabled = false;
+  @property({ type: Boolean }) disabled = false;
   @property({ type: Boolean }) loading = false;
   @property({ type: Boolean }) showTokenCount = false;
   @property({ type: Number }) maxTokens = 4000;
@@ -58,7 +58,6 @@ export class AIPromptInput extends LitElement {
   @property({ type: Boolean }) showTemplates = false;
 
   @state() private _focused = false;
-  @state() private _rows = 1;
 
   static styles = css`
     :host {
@@ -356,9 +355,9 @@ export class AIPromptInput extends LitElement {
               ? html`
                   <span
                     id="token-count"
-                    class="token-count ${tokenWarning
-                      ? 'token-count--warning'
-                      : ''} ${tokenError ? 'token-count--error' : ''}"
+                    class="token-count ${tokenWarning ? 'token-count--warning' : ''} ${tokenError
+                      ? 'token-count--error'
+                      : ''}"
                     role="status"
                   >
                     ${estimatedTokens} / ${this.maxTokens} tokens
@@ -373,9 +372,7 @@ export class AIPromptInput extends LitElement {
             ?disabled=${this.disabled || this.loading || !this.value.trim()}
             aria-label="Submit prompt"
           >
-            ${this.loading
-              ? html`<span class="loading-spinner"></span> Processing...`
-              : 'Submit'}
+            ${this.loading ? html`<span class="loading-spinner"></span> Processing...` : 'Submit'}
           </button>
         </div>
 
@@ -396,4 +393,3 @@ declare global {
     'ai-prompt-input': AIPromptInput;
   }
 }
-

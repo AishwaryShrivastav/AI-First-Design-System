@@ -4,26 +4,26 @@ import type { AIRole } from '../../utils/types';
 
 /**
  * AI chat message bubble component for conversational interfaces.
- * 
+ *
  * @element ai-chat-message
- * 
+ *
  * @fires regenerate - Dispatched when user requests to regenerate the message
  * @fires copy - Dispatched when user copies the message
  * @fires feedback - Dispatched when user provides feedback (like/dislike)
- * 
+ *
  * @slot - Message content
  * @slot actions - Custom action buttons
- * 
+ *
  * @cssprop --ai-message-bg - Background color
  * @cssprop --ai-message-color - Text color
  * @cssprop --ai-message-radius - Border radius
- * 
+ *
  * @prop {AIRole} role - Role in conversation (user, ai, system)
  * @prop {boolean} streaming - Whether message is currently streaming
  * @prop {string} timestamp - Message timestamp
  * @prop {boolean} showActions - Show action buttons (copy, regenerate, feedback)
  * @prop {boolean} error - Show error state
- * 
+ *
  * @example
  * ```html
  * <ai-chat-message role="user">Hello, how can you help?</ai-chat-message>
@@ -31,13 +31,13 @@ import type { AIRole } from '../../utils/types';
  *   I can help you with...
  * </ai-chat-message>
  * ```
- * 
+ *
  * @accessibility
  * - Semantic HTML with proper roles
  * - Keyboard navigation for actions
  * - Screen reader announcements for streaming
  * - Clear visual distinction between roles
- * 
+ *
  * @reference
  * - ARIA Live Regions: https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/
  * - IBM Carbon Chat UI patterns
@@ -155,7 +155,8 @@ export class AIChatMessage extends LitElement {
     }
 
     @keyframes pulse {
-      0%, 100% {
+      0%,
+      100% {
         opacity: 0.3;
       }
       50% {
@@ -309,4 +310,3 @@ declare global {
     'ai-chat-message': AIChatMessage;
   }
 }
-

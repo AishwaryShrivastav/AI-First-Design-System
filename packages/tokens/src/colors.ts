@@ -1,8 +1,8 @@
 /**
  * Color tokens for the design system
- * 
+ *
  * @packageDocumentation
- * 
+ *
  * @reference
  * - WCAG 2.2 Color Contrast: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum
  * - Tailwind CSS Colors: https://tailwindcss.com/docs/customizing-colors
@@ -94,7 +94,7 @@ export const colors = {
   /**
    * AI-specific gradient colors
    * Used for AI indicators, labels, and highlights
-   * 
+   *
    * @reference IBM Carbon for AI visual identity
    */
   ai: {
@@ -136,4 +136,3 @@ export const colors = {
 
 export type ColorToken = typeof colors;
 export type ColorScale = keyof typeof colors;
-

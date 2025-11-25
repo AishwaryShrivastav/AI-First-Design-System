@@ -1,8 +1,8 @@
 /**
  * Animation tokens for the design system
- * 
+ *
  * @packageDocumentation
- * 
+ *
  * @reference
  * - Material Design Motion: https://m3.material.io/styles/motion/overview
  * - Tailwind CSS Transition: https://tailwindcss.com/docs/transition-duration
@@ -63,4 +63,3 @@ export const animation = {
 } as const;
 
 export type AnimationToken = typeof animation;
-

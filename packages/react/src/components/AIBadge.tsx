@@ -8,8 +8,9 @@ export interface AIBadgeProps {
   dot?: boolean;
 }
 
-export const AIBadge = createReactComponent<HTMLElement, AIBadgeProps>(
-  'ai-badge',
-  ['variant', 'aiIndicator', 'confidence', 'dot']
-);
-
+export const AIBadge = createReactComponent<HTMLElement, AIBadgeProps>('ai-badge', [
+  'variant',
+  'aiIndicator',
+  'confidence',
+  'dot',
+]);

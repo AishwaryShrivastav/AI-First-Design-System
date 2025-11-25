@@ -15,6 +15,7 @@ npm run changeset
 ```
 
 Follow the prompts to:
+
 1. Select which packages are affected
 2. Choose the type of change (major, minor, patch)
 3. Describe the change
@@ -22,4 +23,3 @@ Follow the prompts to:
 ## Learn More
 
 Visit https://github.com/changesets/changesets for full documentation.
-

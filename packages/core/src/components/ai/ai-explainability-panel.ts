@@ -4,22 +4,22 @@ import type { ExplainabilityLevel } from '../../utils/types';
 
 /**
  * AI explainability panel with progressive disclosure (What/Why/How).
- * 
+ *
  * @element ai-explainability-panel
- * 
+ *
  * @fires level-change - Dispatched when explainability level changes
- * 
+ *
  * @slot what - High-level explanation (always visible)
  * @slot why - Reasoning explanation (shown at 'why' level)
  * @slot how - Technical details (shown at 'how' level)
- * 
+ *
  * @cssprop --ai-explain-bg - Background color
  * @cssprop --ai-explain-border - Border style
- * 
+ *
  * @prop {ExplainabilityLevel} level - Current disclosure level
  * @prop {boolean} collapsible - Allow collapse/expand
  * @prop {boolean} collapsed - Initial collapsed state
- * 
+ *
  * @example
  * ```html
  * <ai-explainability-panel level="why">
@@ -28,12 +28,12 @@ import type { ExplainabilityLevel } from '../../utils/types';
  *   <div slot="how">ML Model: RandomForest, Confidence: 94%</div>
  * </ai-explainability-panel>
  * ```
- * 
+ *
  * @accessibility
  * - Keyboard navigation
  * - ARIA expanded state
  * - Clear headings for each level
- * 
+ *
  * @reference
  * - SAP Fiori Explainable AI: https://experience.sap.com/fiori-design-web/explainable-ai/
  * - Microsoft HAX Guideline #7: https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/
@@ -252,7 +252,6 @@ export class AIExplainabilityPanel extends LitElement {
                 </div>
               `
             : ''}
-
           ${this.level === 'how'
             ? html`
                 <div class="explanation-section" role="tabpanel">
@@ -274,4 +273,3 @@ declare global {
     'ai-explainability-panel': AIExplainabilityPanel;
   }
 }
-

@@ -4,21 +4,21 @@ import type { InputSize } from '../../utils/types';
 
 /**
  * AI-enhanced input component with support for suggestions and autocomplete.
- * 
+ *
  * @element ai-input
- * 
+ *
  * @fires input - Dispatched when the input value changes
  * @fires change - Dispatched when the input loses focus with a changed value
  * @fires ai-suggestion - Dispatched when AI provides a suggestion
- * 
+ *
  * @slot prefix - Content to show before the input
  * @slot suffix - Content to show after the input
- * 
+ *
  * @cssprop --ai-input-bg - Background color
  * @cssprop --ai-input-color - Text color
  * @cssprop --ai-input-border - Border style
  * @cssprop --ai-input-radius - Border radius
- * 
+ *
  * @prop {string} value - Current input value
  * @prop {string} placeholder - Placeholder text
  * @prop {InputSize} size - Size variant
@@ -26,19 +26,19 @@ import type { InputSize } from '../../utils/types';
  * @prop {boolean} error - Show error state
  * @prop {boolean} aiSuggestions - Enable AI-powered suggestions
  * @prop {string} suggestion - Current AI suggestion (ghost text)
- * 
+ *
  * @example
  * ```html
  * <ai-input placeholder="Enter text..."></ai-input>
  * <ai-input aiSuggestions suggestion="Complete this"></ai-input>
  * ```
- * 
+ *
  * @accessibility
  * - Proper label association (use with external label)
  * - aria-invalid when error
  * - aria-describedby for error messages
  * - Keyboard navigation (Tab to accept suggestion)
- * 
+ *
  * @reference
  * - WCAG 2.2 Input: https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions
  * - ARIA Textbox: https://www.w3.org/WAI/ARIA/apg/patterns/textbox/
@@ -54,6 +54,7 @@ export class AIInput extends LitElement {
   @property({ type: Boolean }) aiSuggestions = false;
   @property({ type: String }) suggestion = '';
 
+  // Track focus state for styling and accessibility
   @state() private _focused = false;
 
   static styles = css`
@@ -159,7 +160,7 @@ export class AIInput extends LitElement {
     );
   }
 
-  private _handleChange(e: Event) {
+  private _handleChange(_e: Event) {
     this.dispatchEvent(
       new CustomEvent('change', {
         bubbles: true,
@@ -187,7 +188,7 @@ export class AIInput extends LitElement {
 
   render() {
     return html`
-      <div class="input-wrapper" part="wrapper">
+      <div class="input-wrapper ${this._focused ? 'focused' : ''}" part="wrapper">
         <slot name="prefix"></slot>
         ${this.suggestion && this.aiSuggestions
           ? html`
@@ -220,4 +221,3 @@ declare global {
     'ai-input': AIInput;
   }
 }
-

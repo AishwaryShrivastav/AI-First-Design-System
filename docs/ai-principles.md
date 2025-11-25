@@ -23,13 +23,9 @@ Trust is the foundation of AI adoption. Users need to understand when they're in
 ### Example
 
 ```html
-<ai-button aiGenerated confidence="0.95">
-  AI Suggested Action
-</ai-button>
+<ai-button aiGenerated confidence="0.95"> AI Suggested Action </ai-button>
 
-<ai-label model="GPT-4" interactive>
-  AI Generated
-</ai-label>
+<ai-label model="GPT-4" interactive> AI Generated </ai-label>
 ```
 
 ### Best Practices
@@ -38,7 +34,7 @@ Trust is the foundation of AI adoption. Users need to understand when they're in
 ✅ Show confidence levels when available  
 ✅ Use consistent AI visual styling (gradients, icons)  
 ❌ Don't hide AI involvement  
-❌ Don't mislead users about AI capabilities  
+❌ Don't mislead users about AI capabilities
 
 ### References
 
@@ -54,7 +50,7 @@ Trust is the foundation of AI adoption. Users need to understand when they're in
 
 ### Why It Matters
 
-Users need to understand *how* and *why* AI makes decisions, especially in critical contexts. Explainability builds trust and enables users to make informed choices.
+Users need to understand _how_ and _why_ AI makes decisions, especially in critical contexts. Explainability builds trust and enables users to make informed choices.
 
 ### How We Implement It
 
@@ -68,16 +64,14 @@ We use **progressive disclosure** with three levels:
 
 ```html
 <ai-explainability-panel level="why" collapsible>
-  <div slot="what">
-    This action was recommended for your workflow.
-  </div>
+  <div slot="what">This action was recommended for your workflow.</div>
   <div slot="why">
-    Based on your usage patterns over the last 30 days,
-    this action appears frequently in similar contexts.
+    Based on your usage patterns over the last 30 days, this action appears frequently in similar
+    contexts.
   </div>
   <div slot="how">
-    Model: RandomForest Classifier<br>
-    Confidence: 94%<br>
+    Model: RandomForest Classifier<br />
+    Confidence: 94%<br />
     Features: time_of_day, previous_actions, context
   </div>
 </ai-explainability-panel>
@@ -90,7 +84,7 @@ We use **progressive disclosure** with three levels:
 ✅ Match explanation depth to user expertise  
 ✅ Use visualizations when helpful  
 ❌ Don't overwhelm with technical details upfront  
-❌ Don't use jargon without explanations  
+❌ Don't use jargon without explanations
 
 ### References
 
@@ -119,7 +113,7 @@ The best AI products augment human capabilities rather than attempting to replac
 ```html
 <ai-chat-message role="ai" showActions>
   Based on your request, I suggest the following approach...
-  
+
   <div slot="actions">
     <ai-button variant="primary">Accept Suggestion</ai-button>
     <ai-button variant="secondary">Modify</ai-button>
@@ -135,7 +129,7 @@ The best AI products augment human capabilities rather than attempting to replac
 ✅ Provide "undo" and "regenerate" options  
 ✅ Keep critical decisions with humans  
 ❌ Don't force users to accept AI decisions  
-❌ Don't hide manual alternatives  
+❌ Don't hide manual alternatives
 
 ### References
 
@@ -163,8 +157,8 @@ Poorly-timed AI suggestions create friction. AI should provide assistance at nat
 
 ```html
 <!-- AI suggestions appear as ghost text while typing -->
-<ai-input 
-  aiSuggestions 
+<ai-input
+  aiSuggestions
   suggestion="Complete this sentence based on context..."
   placeholder="Start typing..."
 ></ai-input>
@@ -182,7 +176,7 @@ Poorly-timed AI suggestions create friction. AI should provide assistance at nat
 ✅ Learn from dismissals and acceptances  
 ✅ Allow users to control AI frequency  
 ❌ Don't interrupt workflows unnecessarily  
-❌ Don't show irrelevant suggestions  
+❌ Don't show irrelevant suggestions
 
 ### References
 
@@ -216,7 +210,7 @@ AI makes mistakes. Users must maintain agency and be able to correct, modify, or
 
 <ai-chat-message role="ai" showActions>
   Here's my response...
-  
+
   <div slot="actions">
     <button title="Copy">📋</button>
     <button title="Regenerate">🔄</button>
@@ -234,7 +228,7 @@ AI makes mistakes. Users must maintain agency and be able to correct, modify, or
 ✅ Include "regenerate" for different options  
 ✅ Collect feedback to improve AI  
 ❌ Don't make AI decisions irreversible  
-❌ Don't hide rejection options  
+❌ Don't hide rejection options
 
 ### References
 
@@ -325,4 +319,3 @@ AI will fail. Design for it:
 - [EU AI Act](https://artificialintelligenceact.eu/)
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 - [GDPR Compliance for AI](https://gdpr.eu/)
-

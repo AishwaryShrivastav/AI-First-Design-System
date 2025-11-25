@@ -3,25 +3,25 @@ import { customElement, property, state } from 'lit/decorators.js';
 
 /**
  * Complete AI chat interface with messages, input, and controls.
- * 
+ *
  * @element ai-chat-interface
- * 
+ *
  * @fires message-send - Dispatched when user sends a message
  * @fires new-conversation - Dispatched when user starts new conversation
- * 
+ *
  * @slot header - Custom header content
  * @slot messages - Chat messages (auto-managed if not provided)
  * @slot footer - Custom footer content
- * 
+ *
  * @cssprop --ai-chat-bg - Background color
  * @cssprop --ai-chat-border - Border style
  * @cssprop --ai-chat-height - Container height
- * 
+ *
  * @prop {boolean} showHeader - Show default header
  * @prop {boolean} showFooter - Show default footer
  * @prop {string} placeholder - Input placeholder text
  * @prop {boolean} disabled - Disable input
- * 
+ *
  * @example
  * ```html
  * <ai-chat-interface placeholder="Ask me anything...">
@@ -30,13 +30,13 @@ import { customElement, property, state } from 'lit/decorators.js';
  *   </div>
  * </ai-chat-interface>
  * ```
- * 
+ *
  * @accessibility
  * - Keyboard navigation
  * - Screen reader support for messages
  * - Focus management
  * - ARIA labels and roles
- * 
+ *
  * @reference
  * - WCAG 2.2 Chat Widget patterns
  * - Modern chat UI patterns (ChatGPT, Claude, Slack)
@@ -97,7 +97,8 @@ export class AIChatInterface extends LitElement {
     }
 
     @keyframes pulse {
-      0%, 100% {
+      0%,
+      100% {
         opacity: 1;
       }
       50% {
@@ -318,4 +319,3 @@ declare global {
     'ai-chat-interface': AIChatInterface;
   }
 }
-

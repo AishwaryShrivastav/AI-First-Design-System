@@ -17,6 +17,7 @@ The AI-First Design System team takes security bugs seriously. We appreciate you
 **Please do not report security vulnerabilities through public GitHub issues.**
 
 Instead, please report them via email to:
+
 - **Email:** aishwaryshrivastava@gmail.com
 - **Subject:** [SECURITY] Brief description of the issue
 
@@ -135,6 +136,7 @@ Before submitting a PR, ensure:
 ## Contact
 
 For security concerns, contact:
+
 - **Email:** aishwaryshrivastava@gmail.com
 - **PGP Key:** Available upon request
 
@@ -148,4 +150,3 @@ For security concerns, contact:
 ---
 
 **Thank you for helping keep the AI-First Design System secure!**
-

@@ -7,8 +7,8 @@ export interface AILabelProps {
   onClick?: (e: CustomEvent<{ model: string }>) => void;
 }
 
-export const AILabel = createReactComponent<HTMLElement, AILabelProps>(
-  'ai-label',
-  ['interactive', 'model', 'animated']
-);
-
+export const AILabel = createReactComponent<HTMLElement, AILabelProps>('ai-label', [
+  'interactive',
+  'model',
+  'animated',
+]);

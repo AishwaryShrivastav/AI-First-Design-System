@@ -3,34 +3,34 @@ import { customElement, property, state } from 'lit/decorators.js';
 
 /**
  * Streaming text component that displays text token-by-token for AI responses.
- * 
+ *
  * @element ai-streaming-text
- * 
+ *
  * @fires stream-complete - Dispatched when streaming is complete
  * @fires stream-error - Dispatched when streaming encounters an error
- * 
+ *
  * @slot - Fallback content (shown when not streaming)
- * 
+ *
  * @cssprop --ai-streaming-cursor - Cursor color
- * 
+ *
  * @prop {string} text - Full text to stream
  * @prop {boolean} streaming - Whether currently streaming
  * @prop {number} speed - Streaming speed in ms per character (default: 20)
  * @prop {boolean} showCursor - Show blinking cursor during streaming
- * 
+ *
  * @example
  * ```html
- * <ai-streaming-text 
- *   text="This is streamed text..." 
+ * <ai-streaming-text
+ *   text="This is streamed text..."
  *   streaming
  *   speed="30"
  * ></ai-streaming-text>
  * ```
- * 
+ *
  * @accessibility
  * - aria-live for screen reader announcements
  * - Proper role and state attributes
- * 
+ *
  * @reference
  * - Modern AI streaming patterns (ChatGPT, Claude)
  * - Vercel AI SDK streaming implementation
@@ -68,10 +68,12 @@ export class AIStreamingText extends LitElement {
     }
 
     @keyframes blink {
-      0%, 50% {
+      0%,
+      50% {
         opacity: 1;
       }
-      51%, 100% {
+      51%,
+      100% {
         opacity: 0;
       }
     }
@@ -148,4 +150,3 @@ declare global {
     'ai-streaming-text': AIStreamingText;
   }
 }
-

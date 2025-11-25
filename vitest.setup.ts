@@ -1,7 +1,7 @@
 /**
  * Vitest setup file
  * Runs before all tests
- * 
+ *
  * @see https://vitest.dev/config/#setupfiles
  */
 
@@ -16,4 +16,3 @@ expect.extend(matchers);
 afterEach(() => {
   cleanup();
 });
-

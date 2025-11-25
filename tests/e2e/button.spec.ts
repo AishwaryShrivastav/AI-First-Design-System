@@ -1,7 +1,7 @@
 /**
  * E2E tests for AIButton component
  * Tests interaction, accessibility, and visual appearance
- * 
+ *
  * @see https://playwright.dev/docs/intro
  */
 
@@ -31,10 +31,10 @@ test.describe('AIButton Component', () => {
     const button = page.locator('ai-button');
     await button.focus();
     await expect(button).toBeFocused();
-    
+
     // Press Enter
     await page.keyboard.press('Enter');
-    
+
     // Press Space
     await page.keyboard.press('Space');
   });
@@ -66,7 +66,7 @@ test.describe('AIButton Component', () => {
 
   test('should handle different variants', async ({ page }) => {
     const variants = ['primary', 'secondary', 'ghost', 'danger'];
-    
+
     for (const variant of variants) {
       await page.goto(`/iframe.html?id=base-components-button--${variant}`);
       const button = page.locator('ai-button');
@@ -79,4 +79,3 @@ test.describe('AIButton Component', () => {
     await expect(page).toHaveScreenshot('button-primary.png');
   });
 });
-

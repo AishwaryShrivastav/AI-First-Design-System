@@ -1,8 +1,8 @@
 /**
  * Typography tokens for the design system
- * 
+ *
  * @packageDocumentation
- * 
+ *
  * @reference
  * - Material Design Typography: https://m3.material.io/styles/typography/overview
  * - Tailwind CSS Typography: https://tailwindcss.com/docs/font-family
@@ -22,14 +22,9 @@ export const typography = {
       'Roboto',
       'sans-serif',
     ].join(', '),
-    mono: [
-      'JetBrains Mono',
-      'Fira Code',
-      'Consolas',
-      'Monaco',
-      'Courier New',
-      'monospace',
-    ].join(', '),
+    mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', 'monospace'].join(
+      ', '
+    ),
   },
 
   /**
@@ -86,4 +81,3 @@ export const typography = {
 } as const;
 
 export type TypographyToken = typeof typography;
-

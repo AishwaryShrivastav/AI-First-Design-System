@@ -82,9 +82,7 @@ npm install @ai-first-ds/svelte
   import '@ai-first-ds/core';
 </script>
 
-<ai-chat-message role="ai" streaming>
-  Hello! How can I help you today?
-</ai-chat-message>
+<ai-chat-message role="ai" streaming> Hello! How can I help you today? </ai-chat-message>
 
 <ai-prompt-input placeholder="Ask me anything..." />
 ```
@@ -114,9 +112,7 @@ import { AIChatMessage, AIPromptInput } from '@ai-first-ds/vue';
 </script>
 
 <template>
-  <AIChatMessage role="ai" streaming>
-    Hello! How can I help you today?
-  </AIChatMessage>
+  <AIChatMessage role="ai" streaming> Hello! How can I help you today? </AIChatMessage>
   <AIPromptInput placeholder="Ask me anything..." />
 </template>
 ```
@@ -124,12 +120,14 @@ import { AIChatMessage, AIPromptInput } from '@ai-first-ds/vue';
 ## 🧩 Component Categories
 
 ### Base Components (AI-Enhanced)
+
 - Button, Input, Select, Checkbox, Radio, Toggle
 - Textarea, Tooltip, Badge, Avatar, Card
 - Modal/Dialog, Dropdown, Tabs, Accordion
 - Progress, Skeleton
 
 ### AI-Specific Components
+
 - **Conversational**: Chat interface, message bubbles, streaming text
 - **Input**: Prompt input, autocomplete, templates
 - **Transparency**: AI labels, explainability panels, feedback tools
@@ -201,8 +199,5 @@ This design system is built on the shoulders of giants. We drew inspiration and 
 
 ## 🔗 Links
 
-- [Website](https://your-website.com)
-- [Storybook](https://your-storybook.com)
-- [GitHub](https://github.com/yourusername/ai-first-design-system)
+- [GitHub](https://github.com/AishwaryShrivastav/AI-First-Design-System)
 - [npm](https://www.npmjs.com/package/@ai-first-ds/core)
-

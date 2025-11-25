@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Playwright configuration for E2E and accessibility testing
- * 
+ *
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
@@ -48,4 +48,3 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
   },
 });
-

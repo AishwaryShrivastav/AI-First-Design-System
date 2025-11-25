@@ -1,8 +1,8 @@
 /**
  * Shadow tokens for the design system
- * 
+ *
  * @packageDocumentation
- * 
+ *
  * @reference
  * - Material Design Elevation: https://m3.material.io/styles/elevation/overview
  * - Tailwind CSS Box Shadow: https://tailwindcss.com/docs/box-shadow
@@ -20,4 +20,3 @@ export const shadows = {
 } as const;
 
 export type ShadowToken = typeof shadows;
-

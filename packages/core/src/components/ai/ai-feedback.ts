@@ -3,31 +3,31 @@ import { customElement, property, state } from 'lit/decorators.js';
 
 /**
  * AI feedback component for collecting user feedback on AI outputs.
- * 
+ *
  * @element ai-feedback
- * 
+ *
  * @fires feedback - Dispatched when user provides feedback
- * 
+ *
  * @slot - Custom feedback content
- * 
+ *
  * @cssprop --ai-feedback-bg - Background color
  * @cssprop --ai-feedback-border - Border style
- * 
+ *
  * @prop {boolean} simple - Show simple thumbs up/down only
  * @prop {boolean} detailed - Show detailed feedback form
  * @prop {boolean} inline - Inline layout
- * 
+ *
  * @example
  * ```html
  * <ai-feedback simple></ai-feedback>
  * <ai-feedback detailed></ai-feedback>
  * ```
- * 
+ *
  * @accessibility
  * - Keyboard accessible
  * - ARIA labels
  * - Focus management
- * 
+ *
  * @reference
  * - Microsoft HAX Guideline #13: https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/
  * - PatternFly AI Guidelines: https://www.patternfly.org/patternfly-ai/ai-guidelines/
@@ -242,19 +242,13 @@ export class AIFeedback extends LitElement {
 
   render() {
     if (this._submitted) {
-      return html`
-        <div class="thank-you" role="status">
-          ✓ Thank you for your feedback!
-        </div>
-      `;
+      return html` <div class="thank-you" role="status">✓ Thank you for your feedback!</div> `;
     }
 
     return html`
       <div class="feedback-container" part="container">
         <div class="feedback-buttons">
-          ${!this.inline
-            ? html`<span class="feedback-label">Was this helpful?</span>`
-            : ''}
+          ${!this.inline ? html`<span class="feedback-label">Was this helpful?</span>` : ''}
           <button
             class="feedback-button feedback-button--positive ${this._feedbackType === 'positive'
               ? 'feedback-button--selected'
@@ -292,8 +286,7 @@ export class AIFeedback extends LitElement {
                   class="form-textarea"
                   placeholder="Your feedback helps us improve..."
                   .value=${this._comment}
-                  @input=${(e: Event) =>
-                    (this._comment = (e.target as HTMLTextAreaElement).value)}
+                  @input=${(e: Event) => (this._comment = (e.target as HTMLTextAreaElement).value)}
                 ></textarea>
                 <div class="form-actions">
                   <button
@@ -303,9 +296,7 @@ export class AIFeedback extends LitElement {
                   >
                     Submit Feedback
                   </button>
-                  <button class="cancel-button" @click=${this._handleCancel}>
-                    Cancel
-                  </button>
+                  <button class="cancel-button" @click=${this._handleCancel}>Cancel</button>
                 </div>
               </div>
             `
@@ -322,4 +313,3 @@ declare global {
     'ai-feedback': AIFeedback;
   }
 }
-

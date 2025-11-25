@@ -1,7 +1,7 @@
 /**
  * WCAG 2.2 Accessibility Tests
  * Ensures all components meet accessibility standards
- * 
+ *
  * @see https://www.w3.org/WAI/WCAG22/quickref/
  * @see https://github.com/dequelabs/axe-core
  */
@@ -78,13 +78,11 @@ test.describe('WCAG 2.2 Level AA Compliance', () => {
 
     const button = page.locator('ai-button');
     const shadow = await button.evaluateHandle(el => el.shadowRoot);
-    const nativeButton = await shadow.evaluateHandle(root => 
+    const nativeButton = await shadow.evaluateHandle(root =>
       (root as ShadowRoot).querySelector('button')
     );
 
-    const ariaBusy = await nativeButton.evaluate(el => 
-      el?.getAttribute('aria-busy')
-    );
+    const ariaBusy = await nativeButton.evaluate(el => el?.getAttribute('aria-busy'));
     expect(ariaBusy).toBe('true');
   });
 });
@@ -92,7 +90,7 @@ test.describe('WCAG 2.2 Level AA Compliance', () => {
 test.describe('Screen Reader Support', () => {
   test('should announce AI-generated content', async ({ page }) => {
     await page.goto('/iframe.html?id=base-components-button--ai-generated');
-    
+
     const button = page.locator('ai-button');
     const ariaLabel = await button.evaluate(el => {
       const shadow = el.shadowRoot;
@@ -105,7 +103,7 @@ test.describe('Screen Reader Support', () => {
 
   test('should announce loading states', async ({ page }) => {
     await page.goto('/iframe.html?id=ai-components-chat--streaming-message');
-    
+
     const message = page.locator('ai-chat-message');
     const ariaLive = await message.evaluate(el => {
       const shadow = el.shadowRoot;
@@ -116,4 +114,3 @@ test.describe('Screen Reader Support', () => {
     expect(ariaLive).toBe('polite');
   });
 });
-

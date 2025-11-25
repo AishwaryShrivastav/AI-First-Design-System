@@ -3,7 +3,7 @@ import type { ButtonVariant, Confidence } from '@ai-first-ds/core';
 
 /**
  * React wrapper for ai-button component
- * 
+ *
  * @see {@link https://lit.dev/docs/frameworks/react/ | Using Lit with React}
  */
 export interface AIButtonProps extends React.HTMLAttributes<HTMLElement> {
@@ -24,11 +24,13 @@ export const AIButton = React.forwardRef<HTMLElement, AIButtonProps>(
       if (!element) return;
 
       // Sync props to custom element properties
-      if (variant !== undefined) (element as any).variant = variant;
-      if (disabled !== undefined) (element as any).disabled = disabled;
-      if (loading !== undefined) (element as any).loading = loading;
-      if (aiGenerated !== undefined) (element as any).aiGenerated = aiGenerated;
-      if (confidence !== undefined) (element as any).confidence = confidence;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const customElement = element as any;
+      if (variant !== undefined) customElement.variant = variant;
+      if (disabled !== undefined) customElement.disabled = disabled;
+      if (loading !== undefined) customElement.loading = loading;
+      if (aiGenerated !== undefined) customElement.aiGenerated = aiGenerated;
+      if (confidence !== undefined) customElement.confidence = confidence;
     }, [variant, disabled, loading, aiGenerated, confidence]);
 
     useEffect(() => {
@@ -53,4 +55,3 @@ export const AIButton = React.forwardRef<HTMLElement, AIButtonProps>(
 );
 
 AIButton.displayName = 'AIButton';
-

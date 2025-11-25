@@ -13,4 +13,3 @@ export const AIChatInterface = createReactComponent<HTMLElement, AIChatInterface
   'ai-chat-interface',
   ['showHeader', 'showFooter', 'placeholder', 'disabled']
 );
-

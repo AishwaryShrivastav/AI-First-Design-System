@@ -4,38 +4,38 @@ import type { ButtonVariant, Confidence } from '../../utils/types';
 
 /**
  * AI-enhanced button component with support for AI-generated actions and confidence indicators.
- * 
+ *
  * @element ai-button
- * 
+ *
  * @fires click - Dispatched when the button is clicked
- * 
+ *
  * @slot - Button content
- * 
+ *
  * @cssprop --ai-button-bg - Background color
  * @cssprop --ai-button-color - Text color
  * @cssprop --ai-button-border - Border style
  * @cssprop --ai-button-radius - Border radius
  * @cssprop --ai-button-padding - Padding
- * 
+ *
  * @prop {ButtonVariant} variant - Visual variant of the button
  * @prop {boolean} disabled - Whether the button is disabled
  * @prop {boolean} loading - Show loading state (prevents interaction)
  * @prop {boolean} aiGenerated - Indicates this is an AI-suggested action
  * @prop {Confidence} confidence - AI confidence level (0-1) for this action
- * 
+ *
  * @example
  * ```html
  * <ai-button variant="primary">Click me</ai-button>
  * <ai-button aiGenerated confidence="0.95">AI Suggestion</ai-button>
  * <ai-button loading>Processing...</ai-button>
  * ```
- * 
+ *
  * @accessibility
  * - Full keyboard support (Enter/Space to activate)
  * - ARIA button role
  * - aria-busy when loading
  * - aria-label includes AI generation info when applicable
- * 
+ *
  * @reference
  * - WCAG 2.2 Button: https://www.w3.org/WAI/WCAG22/Understanding/keyboard
  * - ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/button/
@@ -127,7 +127,8 @@ export class AIButton extends LitElement {
     }
 
     @keyframes pulse {
-      0%, 100% {
+      0%,
+      100% {
         opacity: 1;
       }
       50% {
@@ -207,4 +208,3 @@ declare global {
     'ai-button': AIButton;
   }
 }
-

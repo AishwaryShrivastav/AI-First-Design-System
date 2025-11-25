@@ -109,9 +109,7 @@ Fixes #(issue)
 ```tsx
 // Before
 
-
 // After
-
 ```
 
 ## Additional Context
@@ -129,4 +127,3 @@ Fixes #(issue)
 - [ ] My contribution is made under the terms of the MIT license
 - [ ] I have read and followed the [CONTRIBUTING.md](../CONTRIBUTING.md) guidelines
 - [ ] I agree to the [Code of Conduct](../CODE_OF_CONDUCT.md)
-

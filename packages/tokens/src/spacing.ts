@@ -1,8 +1,8 @@
 /**
  * Spacing tokens for the design system
- * 
+ *
  * @packageDocumentation
- * 
+ *
  * @reference
  * - 8pt Grid System: https://spec.fm/specifics/8-pt-grid
  * - Tailwind CSS Spacing: https://tailwindcss.com/docs/customizing-spacing
@@ -48,4 +48,3 @@ export const spacing = {
 
 export type SpacingToken = typeof spacing;
 export type SpacingScale = keyof typeof spacing;
-

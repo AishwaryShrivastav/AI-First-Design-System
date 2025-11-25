@@ -1,8 +1,8 @@
 /**
  * AI-specific design tokens
- * 
+ *
  * @packageDocumentation
- * 
+ *
  * @reference
  * - IBM Carbon for AI: https://carbondesignsystem.com/guidelines/carbon-for-ai/
  * - Microsoft HAX Toolkit: https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/
@@ -69,4 +69,3 @@ export const aiTokens = {
 } as const;
 
 export type AIToken = typeof aiTokens;
-

@@ -8,8 +8,10 @@ export interface AISkeletonProps {
   lines?: number;
 }
 
-export const AISkeleton = createReactComponent<HTMLElement, AISkeletonProps>(
-  'ai-skeleton',
-  ['variant', 'width', 'height', 'animated', 'lines']
-);
-
+export const AISkeleton = createReactComponent<HTMLElement, AISkeletonProps>('ai-skeleton', [
+  'variant',
+  'width',
+  'height',
+  'animated',
+  'lines',
+]);

@@ -14,8 +14,12 @@ export interface AIInputProps {
   onAiSuggestion?: (e: CustomEvent<{ accepted: boolean; value: string }>) => void;
 }
 
-export const AIInput = createReactComponent<HTMLElement, AIInputProps>(
-  'ai-input',
-  ['value', 'placeholder', 'size', 'disabled', 'error', 'aiSuggestions', 'suggestion']
-);
-
+export const AIInput = createReactComponent<HTMLElement, AIInputProps>('ai-input', [
+  'value',
+  'placeholder',
+  'size',
+  'disabled',
+  'error',
+  'aiSuggestions',
+  'suggestion',
+]);

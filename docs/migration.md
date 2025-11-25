@@ -6,16 +6,17 @@ This guide helps you migrate from other design systems to the AI-First Design Sy
 
 ### Component Mapping
 
-| Material-UI | AI-First DS | Notes |
-|-------------|-------------|-------|
-| `Button` | `ai-button` | Add `variant` prop |
-| `TextField` | `ai-input` | Use `aiSuggestions` for autocomplete |
-| `Chip` | `ai-badge` | AI variants available |
-| `Skeleton` | `ai-skeleton` | Built-in shimmer animation |
+| Material-UI | AI-First DS   | Notes                                |
+| ----------- | ------------- | ------------------------------------ |
+| `Button`    | `ai-button`   | Add `variant` prop                   |
+| `TextField` | `ai-input`    | Use `aiSuggestions` for autocomplete |
+| `Chip`      | `ai-badge`    | AI variants available                |
+| `Skeleton`  | `ai-skeleton` | Built-in shimmer animation           |
 
 ### Example Migration
 
 **Before (Material-UI):**
+
 ```tsx
 import { Button, TextField } from '@mui/material';
 
@@ -26,6 +27,7 @@ import { Button, TextField } from '@mui/material';
 ```
 
 **After (AI-First DS):**
+
 ```tsx
 import { AIButton, AIInput } from '@ai-first-ds/react';
 
@@ -39,16 +41,17 @@ import { AIButton, AIInput } from '@ai-first-ds/react';
 
 ### Component Mapping
 
-| Ant Design | AI-First DS | Notes |
-|------------|-------------|-------|
-| `Button` | `ai-button` | Similar API |
-| `Input` | `ai-input` | Add AI features |
-| `Badge` | `ai-badge` | Confidence visualization |
-| `Message` | `ai-chat-message` | Chat-optimized |
+| Ant Design | AI-First DS       | Notes                    |
+| ---------- | ----------------- | ------------------------ |
+| `Button`   | `ai-button`       | Similar API              |
+| `Input`    | `ai-input`        | Add AI features          |
+| `Badge`    | `ai-badge`        | Confidence visualization |
+| `Message`  | `ai-chat-message` | Chat-optimized           |
 
 ### Example Migration
 
 **Before (Ant Design):**
+
 ```tsx
 import { Button, Input, Badge } from 'antd';
 
@@ -58,6 +61,7 @@ import { Button, Input, Badge } from 'antd';
 ```
 
 **After (AI-First DS):**
+
 ```tsx
 import { AIButton, AIInput, AIBadge } from '@ai-first-ds/react';
 
@@ -72,12 +76,12 @@ The AI-First Design System is heavily inspired by Carbon for AI!
 
 ### Component Mapping
 
-| Carbon | AI-First DS | Notes |
-|--------|-------------|-------|
-| `Button` | `ai-button` | Very similar |
-| `TextInput` | `ai-input` | Enhanced with AI |
+| Carbon        | AI-First DS       | Notes                |
+| ------------- | ----------------- | -------------------- |
+| `Button`      | `ai-button`       | Very similar         |
+| `TextInput`   | `ai-input`        | Enhanced with AI     |
 | `ChatMessage` | `ai-chat-message` | Based on Carbon Chat |
-| `Tag` | `ai-badge` | Similar concept |
+| `Tag`         | `ai-badge`        | Similar concept      |
 
 ### Migration Notes
 
@@ -89,16 +93,17 @@ Carbon users will feel right at home! We've adopted many Carbon for AI patterns.
 
 ### Component Mapping
 
-| Chakra UI | AI-First DS | Notes |
-|-----------|-------------|-------|
-| `Button` | `ai-button` | Use `variant` prop |
-| `Input` | `ai-input` | Native web component |
-| `Badge` | `ai-badge` | AI enhancements |
-| `Skeleton` | `ai-skeleton` | Similar API |
+| Chakra UI  | AI-First DS   | Notes                |
+| ---------- | ------------- | -------------------- |
+| `Button`   | `ai-button`   | Use `variant` prop   |
+| `Input`    | `ai-input`    | Native web component |
+| `Badge`    | `ai-badge`    | AI enhancements      |
+| `Skeleton` | `ai-skeleton` | Similar API          |
 
 ### Theming Migration
 
 **Before (Chakra):**
+
 ```tsx
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
@@ -112,10 +117,11 @@ const theme = extendTheme({
 
 <ChakraProvider theme={theme}>
   <App />
-</ChakraProvider>
+</ChakraProvider>;
 ```
 
 **After (AI-First DS):**
+
 ```css
 :root {
   --ai-primary-color: #3b82f6;
@@ -123,6 +129,7 @@ const theme = extendTheme({
 ```
 
 Or with Tailwind:
+
 ```javascript
 // tailwind.config.js
 export default {
@@ -191,6 +198,7 @@ import { AIButton } from '@ai-first-ds/react';
 **Problem:** Styles from old system conflict with AI-First DS
 
 **Solution:**
+
 ```css
 /* Scope old system styles */
 .old-system {
@@ -205,6 +213,7 @@ import { AIButton } from '@ai-first-ds/react';
 **Problem:** Event names differ between systems
 
 **Solution:**
+
 ```tsx
 // Old system
 <Button onClick={handler} />
@@ -222,6 +231,7 @@ document.querySelector('ai-button')
 **Problem:** Component you need isn't available yet
 
 **Solution:**
+
 1. Check [ROADMAP.md](../ROADMAP.md) for planned components
 2. [Request the feature](https://github.com/AishwaryShrivastav/AI-First-Design-System/issues/new?template=feature_request.yml)
 3. Build it yourself and contribute!
@@ -236,4 +246,3 @@ document.querySelector('ai-button')
 
 - [Migration Best Practices](https://www.patterns.dev/posts/migration-guide)
 - [Design System Migration](https://bradfrost.com/blog/post/design-system-migration-strategies/)
-
