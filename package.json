@@ -25,7 +25,11 @@
     "release": "npm run build && changeset publish",
     "prepare": "husky install",
     "clean": "rm -rf node_modules packages/*/node_modules packages/*/dist",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run typecheck && npm run lint && npm run format:check && npm test -- --run",
+    "docs:quick": "cat docs/quick-reference.md",
+    "docs:components": "cat .ai/component-index.md",
+    "docs:ai": "cat .github/AI_TOOLS.md"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",

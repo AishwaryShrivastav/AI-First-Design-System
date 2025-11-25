@@ -1,0 +1,115 @@
+# AI-First Design System - Cursor Rules
+
+## Project Overview
+
+This is an open-source design system built specifically for AI products. It uses Web Components (Lit), TypeScript, and Tailwind CSS in a monorepo structure.
+
+## Architecture Patterns
+
+### Component Structure
+- **Base Components**: Enhanced standard UI elements (button, input, badge)
+- **AI Components**: AI-specific elements (chat-message, prompt-input, explainability-panel)
+- All components are Web Components using Lit
+- Located in `packages/core/src/components/`
+
+### File Organization
+```
+packages/
+  core/           # Web Components (framework-agnostic)
+  react/          # React wrappers
+  tokens/         # Design tokens
+  storybook/      # Documentation
+```
+
+## Coding Conventions
+
+### Component Creation
+1. Use Lit with TypeScript decorators
+2. Always include comprehensive JSDoc comments
+3. Add accessibility notes in JSDoc
+4. Reference design system precedents (WCAG, ARIA, Carbon, etc.)
+5. Include usage examples in JSDoc
+6. Export types and declare HTMLElementTagNameMap
+
+### Documentation Requirements
+Every exported component MUST have:
+- `@element` tag with element name
+- `@prop` tags for all properties
+- `@fires` tags for events
+- `@slot` tags for slots
+- `@cssprop` tags for CSS custom properties
+- `@example` with code snippet
+- `@accessibility` section
+- `@reference` section with links to standards/precedents
+
+### Naming Conventions
+- Component files: `ai-component-name.ts` (kebab-case)
+- Component classes: `AIComponentName` (PascalCase)
+- Custom elements: `ai-component-name` (kebab-case, ai- prefix)
+- Private methods: `_methodName` (underscore prefix)
+- Types: `TypeName` (PascalCase)
+
+### TypeScript Guidelines
+- Strict mode enabled
+- No `any` types (use `unknown` if needed)
+- Define types in `utils/types.ts`
+- Use type imports: `import type { ... }`
+- Add JSDoc comments to all public types
+
+### Styling
+- Use CSS-in-JS with Lit's `css` tagged template
+- CSS custom properties for theming
+- Follow BEM-like naming in CSS classes
+- Mobile-first responsive design
+- Ensure WCAG 2.2 Level AA color contrast
+
+### Accessibility
+- Full keyboard support
+- ARIA attributes
+- Focus management
+- Screen reader tested
+- Color contrast compliance
+- Live regions for dynamic content
+
+## Design Principles
+
+1. **Transparency**: Clear AI indicators (always show when AI is involved)
+2. **Explainability**: Progressive disclosure (what/why/how)
+3. **Human-Centered**: AI enhances, doesn't replace
+4. **Contextual**: Help when needed
+5. **User Control**: Allow overrides
+
+## Testing Requirements
+- Unit tests with Vitest
+- Accessibility tests with axe-core
+- E2E tests with Playwright
+- Visual regression tests
+- Test file naming: `component-name.test.ts`
+
+## References
+Always cite sources when implementing AI patterns:
+- [IBM Carbon for AI](https://carbondesignsystem.com/guidelines/carbon-for-ai/)
+- [Microsoft HAX Toolkit](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+- [SAP Fiori Explainable AI](https://experience.sap.com/fiori-design-web/explainable-ai/)
+- [PatternFly AI Guidelines](https://www.patternfly.org/patternfly-ai/ai-guidelines/)
+- [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
+
+## AI Code Generation Tips
+
+When generating new components:
+1. Start with JSDoc header (use existing components as template)
+2. Import Lit and decorators
+3. Define custom element with `@customElement` decorator
+4. Add properties with `@property` decorators
+5. Include static styles using `css` tagged template
+6. Implement event handlers as private methods
+7. Create render() method with html tagged template
+8. Declare global HTMLElementTagNameMap
+9. Export the class
+
+When modifying code:
+- Preserve existing JSDoc comments
+- Maintain consistent formatting (Prettier config)
+- Follow existing patterns in similar components
+- Update tests if behavior changes
+- Keep accessibility attributes intact

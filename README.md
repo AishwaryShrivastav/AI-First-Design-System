@@ -2,6 +2,14 @@
 
 > A comprehensive, open-source design system built specifically for AI products
 
+## 🎯 TL;DR
+
+**What**: Framework-agnostic Web Components for AI products  
+**Tech**: Lit + TypeScript + Tailwind CSS  
+**Why**: First design system built for AI from the ground up (not retrofitted)  
+**Install**: `npm install @ai-first-ds/core` or `@ai-first-ds/react`  
+**Docs**: Quick start below | [Full Guide](./docs/getting-started.md) | [Components](./.ai/component-index.md)
+
 [![npm version](https://badge.fury.io/js/%40ai-first-ds%2Fcore.svg)](https://www.npmjs.com/package/@ai-first-ds/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/AishwaryShrivastav/AI-First-Design-System/actions/workflows/ci.yml/badge.svg)](https://github.com/AishwaryShrivastav/AI-First-Design-System/actions/workflows/ci.yml)
@@ -9,9 +17,47 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 [![Code of Conduct](https://img.shields.io/badge/code_of_conduct-enforced-ff69b4.svg)](./CODE_OF_CONDUCT.md)
 
-## 🎯 Overview
+## 🤖 For AI Tools
 
-The AI-First Design System is a modern, framework-agnostic component library designed from the ground up for AI-powered products. Built with Web Components, styled with Tailwind CSS, and following industry-leading accessibility patterns from Radix UI.
+<details>
+<summary>Structured metadata for AI code assistants</summary>
+
+```yaml
+project_type: design_system
+primary_language: TypeScript
+framework: Lit (Web Components)
+styling: Tailwind CSS + CSS-in-JS
+architecture: Monorepo (npm workspaces)
+build_tool: Vite
+test_framework: Vitest + Playwright
+package_manager: npm
+
+packages:
+  - name: '@ai-first-ds/core'
+    type: web_components
+    framework_agnostic: true
+  - name: '@ai-first-ds/react'
+    type: react_wrappers
+  - name: '@ai-first-ds/tokens'
+    type: design_tokens
+
+key_files:
+  - .cursorrules # AI editor rules and patterns
+  - .ai/project-context.md # Project overview for AI
+  - .ai/component-index.md # Component catalog
+  - CODING_STANDARDS.md # Coding conventions
+  - docs/quick-reference.md # Command & API reference
+  - .github/AI_TOOLS.md # AI development guide
+
+component_pattern: |
+  Lit-based Web Components with:
+  - Comprehensive JSDoc (@element, @prop, @fires, @accessibility, @reference)
+  - TypeScript strict mode
+  - WCAG 2.2 Level AA accessibility
+  - Research-backed AI design patterns
+```
+
+</details>
 
 ## ✨ Key Features
 
@@ -172,11 +218,15 @@ npm run storybook
 
 ## 📖 Documentation
 
-- [Component Documentation](https://your-storybook-url.com)
-- [AI Design Principles](./docs/ai-principles.md)
-- [Accessibility Guide](./docs/accessibility.md)
-- [Theming Guide](./docs/theming.md)
-- [Contributing Guide](./CONTRIBUTING.md)
+- **[Quick Reference](./docs/quick-reference.md)** - Commands, APIs, and common tasks
+- **[Getting Started](./docs/getting-started.md)** - Installation and setup guide
+- **[Component Index](./.ai/component-index.md)** - All components with examples
+- **[AI Design Principles](./docs/ai-principles.md)** - Core design philosophy
+- **[Accessibility Guide](./docs/accessibility.md)** - WCAG compliance details
+- **[Customization](./docs/customization.md)** - Theming and styling guide
+- **[Coding Standards](./CODING_STANDARDS.md)** - Code conventions
+- **[Contributing Guide](./CONTRIBUTING.md)** - How to contribute
+- **[AI Tools Guide](./.github/AI_TOOLS.md)** - Using AI assistants with this project
 
 ## 🤝 Contributing
 
