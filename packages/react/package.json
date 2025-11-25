@@ -1,0 +1,50 @@
+{
+  "name": "@ai-first-ds/react",
+  "version": "0.1.0",
+  "description": "React wrappers for AI-First Design System",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@ai-first-ds/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.0"
+  },
+  "keywords": [
+    "react",
+    "web-components",
+    "ai",
+    "design-system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-first-design-system.git",
+    "directory": "packages/react"
+  },
+  "license": "MIT"
+}
+
