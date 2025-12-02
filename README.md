@@ -9,9 +9,9 @@
 **Why**: First design system built for AI from the ground up (not retrofitted)
 
 **Version**: 0.2.0  
-**Components**: 15
+**Components**: 14 (all documented in Storybook)  
 **Install**: `npm install @ai-first-ds/core` or `@ai-first-ds/react`  
-**Docs**: Quick start below | [Full Guide](./docs/getting-started.md) | [Components](./.ai/component-index.md)
+**Docs**: Quick start below | [Full Guide](./docs/getting-started.md) | [Storybook Guide](./packages/storybook/STORYBOOK_GUIDE.md) | [Components](./.ai/component-index.md)
 
 [![npm version](https://badge.fury.io/js/%40ai-first-ds%2Fcore.svg)](https://www.npmjs.com/package/@ai-first-ds/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -69,7 +69,7 @@ component_pattern: |
 - **♿ Accessible** - WCAG 2.2 compliant, following WAI-ARIA patterns
 - **🎨 Customizable** - Extensive theming with Tailwind CSS and CSS custom properties
 - **📦 Lightweight** - Tree-shakeable, optimized bundle sizes
-- **📚 Well Documented** - Comprehensive Storybook documentation with examples
+- **📚 Well Documented** - Complete Storybook documentation for all components with interactive examples
 - **🔧 Developer Friendly** - TypeScript support, AI code editor optimized
 
 ## 🏗️ Architecture
@@ -223,6 +223,7 @@ npm run storybook
 
 - **[Quick Reference](./docs/quick-reference.md)** - Commands, APIs, and common tasks
 - **[Getting Started](./docs/getting-started.md)** - Installation and setup guide
+- **[Storybook Guide](./packages/storybook/STORYBOOK_GUIDE.md)** - Complete Storybook documentation standards
 - **[Component Index](./.ai/component-index.md)** - All components with examples
 - **[AI Design Principles](./docs/ai-principles.md)** - Core design philosophy
 - **[Accessibility Guide](./docs/accessibility.md)** - WCAG compliance details
@@ -230,6 +231,22 @@ npm run storybook
 - **[Coding Standards](./CODING_STANDARDS.md)** - Code conventions
 - **[Contributing Guide](./CONTRIBUTING.md)** - How to contribute
 - **[AI Tools Guide](./.github/AI_TOOLS.md)** - Using AI assistants with this project
+
+### Interactive Documentation
+
+Run Storybook locally to explore all components:
+
+```bash
+npm run storybook
+```
+
+All 14 components are fully documented with:
+
+- Interactive controls and examples
+- Accessibility information
+- Best practices and pitfalls
+- Real-world usage examples
+- Research references
 
 ## 🤝 Contributing
 

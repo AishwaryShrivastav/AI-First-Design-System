@@ -63,7 +63,7 @@ Users can always override AI decisions.
 
 ## 📦 Installation
 
-\`\`\`bash
+```bash
 # Core components (framework-agnostic)
 npm install @ai-first-ds/core
 
@@ -75,24 +75,24 @@ npm install @ai-first-ds/vue
 
 # Design tokens
 npm install @ai-first-ds/tokens
-\`\`\`
+```
 
 ## 🚀 Quick Start
 
 ### Web Components (Vanilla JavaScript)
 
-\`\`\`html
+```html
 <script type="module">
   import '@ai-first-ds/core';
 </script>
 
 <ai-button variant="primary">Click me</ai-button>
 <ai-chat-message role="ai">Hello!</ai-chat-message>
-\`\`\`
+```
 
 ### React
 
-\`\`\`jsx
+```jsx
 import { AIButton, AIChatMessage } from '@ai-first-ds/react';
 
 function App() {
@@ -103,7 +103,7 @@ function App() {
     </>
   );
 }
-\`\`\`
+```
 
 ## 📚 Component Categories
 
@@ -137,24 +137,24 @@ All components are built to WCAG 2.2 Level AA standards:
 
 Extensive theming support:
 
-\`\`\`css
+```css
 :root {
   --ai-primary-color: #your-brand-color;
   --ai-font-family: 'Your Font', sans-serif;
   --ai-border-radius: 8px;
 }
-\`\`\`
+```
 
 Or use our Tailwind configuration:
 
-\`\`\`js
+```js
 import baseConfig from '@ai-first-ds/tokens/tailwind';
 
 export default {
   ...baseConfig,
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
 };
-\`\`\`
+```
 
 ## 🤝 Contributing
 

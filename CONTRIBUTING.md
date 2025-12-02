@@ -203,9 +203,52 @@ export const AIGenerated: StoryObj = {
 };
 ```
 
-### 4. Add Documentation
+### 4. Add Storybook Story
 
-Add MDX documentation in `packages/storybook/docs/`:
+Create a comprehensive Storybook story following our standards:
+
+**Location**: `packages/storybook/stories/[category]/[component-name].stories.ts`
+
+**Requirements**:
+
+- Use the template at `packages/storybook/.storybook/templates/story.template.ts`
+- Include all props in argTypes with proper controls
+- Create multiple story variants (Default, Variants, States, AllVariants, RealWorldExample, BestPractices)
+- Add comprehensive JSDoc with accessibility info, best practices, and research references
+- Follow the [Storybook Guide](./packages/storybook/STORYBOOK_GUIDE.md) for complete standards
+
+**Example**:
+
+```typescript
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { html } from 'lit';
+import '@ai-first-ds/core/components/base/ai-button';
+
+const meta: Meta = {
+  title: 'Base Components/Button',
+  component: 'ai-button',
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'ghost', 'danger'],
+      description: 'Visual variant',
+    },
+    // ... more argTypes
+  },
+};
+
+export default meta;
+type Story = StoryObj;
+
+export const Default: Story = {
+  render: args => html`<ai-button variant=${args.variant}>Click me</ai-button>`,
+};
+```
+
+### 5. Add Documentation
+
+Add MDX documentation in `packages/storybook/docs/` (optional):
 
 ```mdx
 # Button Component
@@ -258,7 +301,7 @@ All code and decisions must be backed by trusted sources:
 - [ ] All tests pass (`npm test`)
 - [ ] Accessibility tests pass
 - [ ] Documentation is complete
-- [ ] Storybook stories added
+- [ ] Storybook stories added (see [Storybook Guide](./packages/storybook/STORYBOOK_GUIDE.md))
 - [ ] Design rationale with references included
 - [ ] TypeScript types are correct
 - [ ] No linting errors

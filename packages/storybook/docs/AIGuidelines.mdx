@@ -19,13 +19,13 @@ Trust is fundamental to AI adoption. Users need to understand when they're inter
 - Provide clear visual distinction for AI features
 
 ### Example
-\`\`\`html
+```html
 <ai-button aiGenerated confidence="0.95">
   AI Suggested Action
 </ai-button>
 
 <ai-label model="GPT-4">AI Generated</ai-label>
-\`\`\`
+```
 
 ### Reference
 - [IBM Carbon for AI](https://carbondesignsystem.com/guidelines/carbon-for-ai/)
@@ -47,14 +47,14 @@ Use progressive disclosure (What/Why/How):
 3. **How** - Provide technical details (for experts)
 
 ### Example
-\`\`\`html
+```html
 <!-- Coming soon: ai-explainability-panel -->
 <ai-explainability-panel level="what">
   <div slot="what">This action was recommended based on your usage patterns.</div>
   <div slot="why">You frequently perform similar actions at this time.</div>
   <div slot="how">ML model: RandomForest, Confidence: 94%</div>
 </ai-explainability-panel>
-\`\`\`
+```
 
 ### Reference
 - [SAP Fiori Explainable AI](https://experience.sap.com/fiori-design-web/explainable-ai/)
@@ -76,14 +76,14 @@ The best AI products augment human capabilities rather than attempting to replac
 - Show AI suggestions as recommendations, not commands
 
 ### Example
-\`\`\`html
+```html
 <ai-chat-message role="ai" showActions>
   Based on your request, I suggest...
   <button slot="actions">Accept</button>
   <button slot="actions">Modify</button>
   <button slot="actions">Reject</button>
 </ai-chat-message>
-\`\`\`
+```
 
 ### Reference
 - [PatternFly AI Guidelines](https://www.patternfly.org/patternfly-ai/ai-guidelines/)
@@ -105,7 +105,7 @@ Interrupting users with unhelpful AI suggestions creates frustration. AI should 
 - Learn from user behavior to improve relevance
 
 ### Example
-\`\`\`html
+```html
 <ai-input aiSuggestions placeholder="Start typing...">
   <!-- AI suggestions appear as ghost text -->
 </ai-input>
@@ -113,7 +113,7 @@ Interrupting users with unhelpful AI suggestions creates frustration. AI should 
 <ai-prompt-input showTemplates>
   <!-- Templates appear when relevant -->
 </ai-prompt-input>
-\`\`\`
+```
 
 ### Reference
 - [Emplifi Soul Design System](https://soul.emplifi.io/)
@@ -135,7 +135,7 @@ AI makes mistakes. Users must maintain agency and be able to correct or override
 - Never lock users into AI decisions
 
 ### Example
-\`\`\`html
+```html
 <ai-chat-message role="ai" showActions>
   Here's my response...
   <div slot="actions">
@@ -145,7 +145,7 @@ AI makes mistakes. Users must maintain agency and be able to correct or override
     <button>👎 Reject</button>
   </div>
 </ai-chat-message>
-\`\`\`
+```
 
 ### Reference
 - [Microsoft HAX Guideline #10](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
