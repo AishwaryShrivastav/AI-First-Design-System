@@ -4,6 +4,8 @@ The `ai-first-design-system` package contains framework-agnostic Web Components 
 
 ## Installation
 
+View on npm: https://www.npmjs.com/package/ai-first-design-system
+
 ```bash
 npm install ai-first-design-system
 # or
