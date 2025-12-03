@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
@@ -98,7 +98,7 @@ export class AISkeleton extends LitElement {
     }
   `;
 
-  render() {
+  render(): TemplateResult {
     const style = `
       ${this.width ? `width: ${this.width};` : ''}
       ${this.height ? `height: ${this.height};` : ''}

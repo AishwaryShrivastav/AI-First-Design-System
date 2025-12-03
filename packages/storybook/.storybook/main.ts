@@ -23,6 +23,13 @@ const config: StorybookConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@ai-first-ds/core': resolve(__dirname, '../../core/src'),
+      // Resolve ai-first-design-system imports to source files
+      'ai-first-design-system/components/ai': resolve(__dirname, '../../core/src/components/ai'),
+      'ai-first-design-system/components/base': resolve(
+        __dirname,
+        '../../core/src/components/base'
+      ),
+      'ai-first-design-system': resolve(__dirname, '../../core/src'),
     };
 
     return config;

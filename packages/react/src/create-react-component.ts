@@ -25,7 +25,9 @@ type WebComponentProps<P> = P & { children?: React.ReactNode };
 export function createReactComponent<T extends HTMLElement, P>(
   tagName: string,
   propNames: (keyof P)[]
-) {
+): React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<WebComponentProps<P>> & React.RefAttributes<T>
+> {
   const Component = React.forwardRef<T, WebComponentProps<P>>((props, ref) => {
     const elementRef = useRef<T>(null);
     const typedProps = props as WebComponentProps<P>;

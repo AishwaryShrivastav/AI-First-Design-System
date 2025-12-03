@@ -37,6 +37,20 @@
       {
         "selector": "property",
         "format": null
+      },
+      {
+        "selector": "classMethod",
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "parameter",
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "import",
+        "format": ["camelCase", "PascalCase"]
       }
     ],
     "@typescript-eslint/prefer-optional-chain": "warn",

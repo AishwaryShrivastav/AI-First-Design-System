@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import type { ButtonVariant, Confidence } from '../../utils/types';
 
@@ -172,7 +172,7 @@ export class AIButton extends LitElement {
     );
   }
 
-  render() {
+  render(): TemplateResult {
     const ariaLabel = this.aiGenerated
       ? `AI-generated action${this.confidence ? ` (${Math.round(this.confidence * 100)}% confidence)` : ''}`
       : undefined;

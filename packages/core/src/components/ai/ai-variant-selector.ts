@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 
 /**
@@ -314,7 +314,7 @@ export class AIVariantSelector extends LitElement {
     }
   }
 
-  render() {
+  render(): TemplateResult {
     return html`
       <div class="container" part="container">
         <div class="header">

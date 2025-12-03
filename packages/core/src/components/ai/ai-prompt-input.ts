@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 
 /**
@@ -295,7 +295,7 @@ export class AIPromptInput extends LitElement {
     );
   }
 
-  render() {
+  render(): TemplateResult {
     // Simple token estimation (4 chars ≈ 1 token)
     const estimatedTokens = Math.ceil(this.value.length / 4);
     const tokenPercentage = (estimatedTokens / this.maxTokens) * 100;

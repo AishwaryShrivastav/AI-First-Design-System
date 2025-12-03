@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
@@ -117,7 +117,7 @@ export class AILabel extends LitElement {
     }
   }
 
-  render() {
+  render(): TemplateResult {
     return html`
       <span
         class="ai-label"

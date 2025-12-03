@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 
 /**
@@ -240,7 +240,7 @@ export class AIFeedback extends LitElement {
     this._comment = '';
   }
 
-  render() {
+  render(): TemplateResult {
     if (this._submitted) {
       return html` <div class="thank-you" role="status">✓ Thank you for your feedback!</div> `;
     }

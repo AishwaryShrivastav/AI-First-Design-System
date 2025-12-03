@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 
 /**
@@ -242,7 +242,7 @@ export class AIPromptTemplates extends LitElement {
     return this._templates.filter(t => t.category === this.category);
   }
 
-  render() {
+  render(): TemplateResult {
     const categories = [
       { id: 'all', label: 'All Templates' },
       { id: 'writing', label: 'Writing' },

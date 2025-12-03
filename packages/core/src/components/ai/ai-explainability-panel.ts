@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import type { ExplainabilityLevel } from '../../utils/types';
 
@@ -183,7 +183,7 @@ export class AIExplainabilityPanel extends LitElement {
     );
   }
 
-  render() {
+  render(): TemplateResult {
     const showContent = !this.collapsed || this._expanded;
 
     return html`

@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import type { InputSize } from '../../utils/types';
 
@@ -186,7 +186,7 @@ export class AIInput extends LitElement {
     }
   }
 
-  render() {
+  render(): TemplateResult {
     return html`
       <div class="input-wrapper ${this._focused ? 'focused' : ''}" part="wrapper">
         <slot name="prefix"></slot>

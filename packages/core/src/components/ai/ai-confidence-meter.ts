@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
 /**
@@ -290,7 +290,7 @@ export class AIConfidenceMeter extends LitElement {
     `;
   }
 
-  render() {
+  render(): TemplateResult {
     const level = this._getConfidenceLevel();
     const percentage = Math.round(this.confidence * 100);
 

@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import type { Confidence } from '../../utils/types';
 
@@ -146,7 +146,7 @@ export class AIBadge extends LitElement {
     }
   `;
 
-  render() {
+  render(): TemplateResult {
     const classes = `badge badge--${this.aiIndicator ? 'ai' : this.variant}`;
     const ariaLabel = this.confidence
       ? `AI confidence: ${Math.round(this.confidence * 100)}%`

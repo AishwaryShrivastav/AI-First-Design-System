@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 
 /**
@@ -79,13 +79,13 @@ export class AIStreamingText extends LitElement {
     }
   `;
 
-  updated(changedProperties: Map<string, unknown>) {
+  updated(changedProperties: Map<string, unknown>): void {
     if (changedProperties.has('text') || changedProperties.has('streaming')) {
       this._handleStreamingChange();
     }
   }
 
-  disconnectedCallback() {
+  disconnectedCallback(): void {
     super.disconnectedCallback();
     this._clearStream();
   }
@@ -129,7 +129,7 @@ export class AIStreamingText extends LitElement {
     }, this.speed);
   }
 
-  render() {
+  render(): TemplateResult {
     return html`
       <span
         class="streaming-text"

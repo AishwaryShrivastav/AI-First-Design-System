@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import type { AIRole } from '../../utils/types';
 
@@ -229,7 +229,7 @@ export class AIChatMessage extends LitElement {
     );
   }
 
-  render() {
+  render(): TemplateResult {
     const roleLabel = this.role === 'user' ? 'You' : this.role === 'ai' ? 'AI' : 'System';
 
     return html`
