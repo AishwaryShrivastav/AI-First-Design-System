@@ -33,6 +33,10 @@ export * from './components/ai/ai-skeleton';
 export * from './components/ai/ai-streaming-text';
 export * from './components/ai/ai-explainability-panel';
 export * from './components/ai/ai-feedback';
+export * from './components/ai/ai-confidence-meter';
+export * from './components/ai/ai-error-recovery';
+export * from './components/ai/ai-variant-selector';
+export * from './components/ai/ai-prompt-templates';
 
 // Utilities
 export * from './utils/types';
