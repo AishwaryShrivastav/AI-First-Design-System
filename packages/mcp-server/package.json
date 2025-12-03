@@ -1,6 +1,6 @@
 {
   "name": "@ai-first-ds/mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Model Context Protocol server for AI-First Design System - enables AI tools to query design system components, tokens, and patterns",
   "type": "module",
   "main": "dist/index.js",
