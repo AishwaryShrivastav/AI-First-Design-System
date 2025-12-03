@@ -13,6 +13,8 @@
 
 import React, { useRef, useEffect } from 'react';
 
+type WebComponentProps<P> = P & { children?: React.ReactNode };
+
 /**
  * Creates a React component wrapper for a web component
  *
@@ -20,14 +22,14 @@ import React, { useRef, useEffect } from 'react';
  * @param propNames - Array of property names to sync from React props to element properties
  * @returns React component
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function createReactComponent<T extends HTMLElement, P extends Record<string, any>>(
+export function createReactComponent<T extends HTMLElement, P>(
   tagName: string,
   propNames: (keyof P)[]
 ) {
-  const Component = React.forwardRef<T, P & { children?: React.ReactNode }>((props, ref) => {
+  const Component = React.forwardRef<T, WebComponentProps<P>>((props, ref) => {
     const elementRef = useRef<T>(null);
-    const { children, ...restProps } = props;
+    const typedProps = props as WebComponentProps<P>;
+    const { children, ...restProps } = typedProps;
 
     // Sync props to custom element properties
     useEffect(
@@ -35,15 +37,15 @@ export function createReactComponent<T extends HTMLElement, P extends Record<str
         const element = elementRef.current;
         if (!element) return;
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const customElement = element as any;
+        const customElement = element as Record<string, unknown>;
         propNames.forEach(propName => {
-          if ((props as any)[propName] !== undefined) {
-            customElement[propName] = (props as any)[propName];
+          const value = typedProps[propName];
+          if (value !== undefined) {
+            customElement[propName as string] = value;
           }
         });
       },
-      propNames.map(name => (props as any)[name])
+      propNames.map(name => typedProps[name])
     );
 
     // Forward ref
@@ -57,24 +59,21 @@ export function createReactComponent<T extends HTMLElement, P extends Record<str
       }
     }, [ref]);
 
-    // Extract event handlers (onEventName)
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const eventHandlers: Record<string, any> = {};
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const elementProps: Record<string, any> = {};
+    const eventHandlers: Record<string, EventListener> = {};
+    const elementProps: Record<string, unknown> = {};
+    const restPropsRecord = restProps as Record<string, unknown>;
 
-    Object.keys(restProps).forEach(key => {
-      if (key.startsWith('on') && typeof restProps[key] === 'function') {
-        // Convert React event name to native event name
-        // e.g., onClick -> click, onMessageSend -> message-send
+    Object.keys(restPropsRecord).forEach(key => {
+      const value = restPropsRecord[key];
+      if (key.startsWith('on') && typeof value === 'function') {
         const eventName = key
           .slice(2)
           .replace(/([A-Z])/g, '-$1')
           .toLowerCase()
           .slice(1);
-        eventHandlers[eventName] = restProps[key];
+        eventHandlers[eventName] = value as EventListener;
       } else if (!propNames.includes(key as keyof P)) {
-        elementProps[key] = restProps[key];
+        elementProps[key] = value;
       }
     });
 
@@ -103,7 +102,7 @@ export function createReactComponent<T extends HTMLElement, P extends Record<str
         ref: elementRef,
         ...elementProps,
       },
-      children
+      children as React.ReactNode
     );
   });
 
