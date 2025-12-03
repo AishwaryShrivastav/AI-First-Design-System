@@ -46,12 +46,13 @@ export class AIFeedback extends LitElement {
   static styles = css`
     :host {
       display: block;
+      --_ai-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
     }
 
     .feedback-container {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.875rem;
     }
 
     :host([inline]) .feedback-container {
@@ -61,142 +62,207 @@ export class AIFeedback extends LitElement {
 
     .feedback-buttons {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.625rem;
       align-items: center;
     }
 
     .feedback-label {
-      font-size: 0.875rem;
-      color: #6b7280;
+      font-size: 0.8125rem;
+      color: #64748b;
       font-weight: 500;
     }
 
     .feedback-button {
       display: inline-flex;
       align-items: center;
-      gap: 0.375rem;
-      padding: 0.5rem 0.75rem;
-      border: 1px solid #e5e7eb;
-      border-radius: 0.375rem;
+      gap: 0.4375rem;
+      padding: 0.5625rem 0.875rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.625rem;
       background: white;
       cursor: pointer;
-      font-size: 0.875rem;
-      transition: all 150ms ease;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
     }
 
     .feedback-button:hover {
-      background: #f9fafb;
-      border-color: #d1d5db;
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .feedback-button:active {
+      transform: translateY(0);
     }
 
     .feedback-button:focus-visible {
-      outline: 2px solid #3b82f6;
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
     }
 
     .feedback-button--selected {
-      background: #eff6ff;
-      border-color: #3b82f6;
-      color: #3b82f6;
+      background: linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.08) 0%,
+        rgba(139, 92, 246, 0.06) 100%
+      );
+      border-color: #8b5cf6;
+      color: #7c3aed;
     }
 
     .feedback-button--positive:hover,
     .feedback-button--positive.feedback-button--selected {
-      background: #f0fdf4;
-      border-color: #22c55e;
-      color: #22c55e;
+      background: linear-gradient(
+        135deg,
+        rgba(16, 185, 129, 0.08) 0%,
+        rgba(52, 211, 153, 0.06) 100%
+      );
+      border-color: #10b981;
+      color: #059669;
     }
 
     .feedback-button--negative:hover,
     .feedback-button--negative.feedback-button--selected {
-      background: #fef2f2;
-      border-color: #ef4444;
-      color: #ef4444;
+      background: linear-gradient(
+        135deg,
+        rgba(239, 68, 68, 0.08) 0%,
+        rgba(248, 113, 113, 0.06) 100%
+      );
+      border-color: #f87171;
+      color: #dc2626;
     }
 
     .detailed-form {
-      padding: 1rem;
-      border: 1px solid #e5e7eb;
-      border-radius: 0.5rem;
-      background: #f9fafb;
+      padding: 1.125rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.875rem;
+      background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #f0f9ff 100%);
+      animation: form-slide-in 0.3s ease-out;
+    }
+
+    @keyframes form-slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .form-label {
       display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #374151;
+      margin-bottom: 0.625rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #475569;
     }
 
     .form-textarea {
       width: 100%;
       min-height: 6rem;
-      padding: 0.75rem;
-      border: 1px solid #d1d5db;
-      border-radius: 0.375rem;
+      padding: 0.875rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.625rem;
       font-family: inherit;
       font-size: 0.875rem;
       resize: vertical;
+      transition: all 0.15s ease;
+      background: white;
+    }
+
+    .form-textarea:hover {
+      border-color: #cbd5e1;
     }
 
     .form-textarea:focus {
       outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
     }
 
     .form-actions {
       display: flex;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
+      gap: 0.625rem;
+      margin-top: 0.875rem;
     }
 
     .submit-button {
-      padding: 0.5rem 1rem;
+      padding: 0.5625rem 1.125rem;
       border: none;
-      border-radius: 0.375rem;
-      background: #3b82f6;
+      border-radius: 0.5rem;
+      background: var(--_ai-gradient);
       color: white;
-      font-weight: 500;
-      font-size: 0.875rem;
+      font-weight: 600;
+      font-size: 0.8125rem;
       cursor: pointer;
-      transition: all 150ms ease;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(139, 92, 246, 0.25);
     }
 
     .submit-button:hover {
-      background: #2563eb;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+    }
+
+    .submit-button:active {
+      transform: translateY(0);
     }
 
     .submit-button:disabled {
       opacity: 0.5;
       cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
 
     .cancel-button {
-      padding: 0.5rem 1rem;
-      border: 1px solid #d1d5db;
-      border-radius: 0.375rem;
+      padding: 0.5625rem 1.125rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.5rem;
       background: white;
-      color: #374151;
-      font-weight: 500;
-      font-size: 0.875rem;
+      color: #64748b;
+      font-weight: 600;
+      font-size: 0.8125rem;
       cursor: pointer;
-      transition: all 150ms ease;
+      transition: all 0.15s ease;
     }
 
     .cancel-button:hover {
-      background: #f9fafb;
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      color: #475569;
     }
 
     .thank-you {
-      padding: 1rem;
-      border: 1px solid #d1fae5;
-      border-radius: 0.5rem;
-      background: #f0fdf4;
+      padding: 1.125rem;
+      border: 1.5px solid rgba(16, 185, 129, 0.2);
+      border-radius: 0.875rem;
+      background: linear-gradient(
+        135deg,
+        rgba(240, 253, 244, 0.9) 0%,
+        rgba(220, 252, 231, 0.7) 100%
+      );
       color: #166534;
       text-align: center;
       font-size: 0.875rem;
+      font-weight: 500;
+      animation: thank-you-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes thank-you-pop {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   `;
 

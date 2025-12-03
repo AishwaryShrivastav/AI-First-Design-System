@@ -49,118 +49,148 @@ export class AIExplainabilityPanel extends LitElement {
   static styles = css`
     :host {
       display: block;
+      --_ai-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
     }
 
     .panel {
-      border: var(--ai-explain-border, 1px solid #e5e7eb);
-      border-radius: 0.5rem;
+      border: var(--ai-explain-border, 1.5px solid #e2e8f0);
+      border-radius: 1rem;
       background: var(--ai-explain-bg, white);
       overflow: hidden;
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.02),
+        0 4px 12px rgba(0, 0, 0, 0.03);
     }
 
     .panel-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem;
-      background: #f9fafb;
-      border-bottom: 1px solid #e5e7eb;
+      padding: 1rem 1.125rem;
+      background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #f0f9ff 100%);
+      border-bottom: 1px solid rgba(139, 92, 246, 0.1);
     }
 
     .panel-title {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      color: #1f2937;
+      gap: 0.625rem;
+      font-weight: 650;
+      font-size: 0.9375rem;
+      color: #1e293b;
+      letter-spacing: -0.01em;
     }
 
     .ai-icon {
-      width: 1.25rem;
-      height: 1.25rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 0.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--_ai-gradient);
+      border-radius: 0.4375rem;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 0.75rem;
+      font-size: 0.875rem;
+      box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
     }
 
     .toggle-button {
-      padding: 0.375rem;
+      padding: 0.4375rem;
       border: none;
-      background: transparent;
-      border-radius: 0.375rem;
+      background: rgba(139, 92, 246, 0.08);
+      border-radius: 0.5rem;
       cursor: pointer;
-      color: #6b7280;
-      transition: all 150ms ease;
+      color: #8b5cf6;
+      transition: all 0.15s ease;
+      font-size: 0.75rem;
     }
 
     .toggle-button:hover {
-      background: #f3f4f6;
-      color: #1f2937;
+      background: rgba(139, 92, 246, 0.15);
+      color: #7c3aed;
     }
 
     .toggle-button:focus-visible {
-      outline: 2px solid #3b82f6;
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
     }
 
     .panel-content {
-      padding: 1rem;
+      padding: 1.125rem;
     }
 
     .level-tabs {
       display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #e5e7eb;
+      gap: 0.25rem;
+      margin-bottom: 1.125rem;
+      padding: 0.25rem;
+      background: #f1f5f9;
+      border-radius: 0.625rem;
     }
 
     .level-tab {
-      padding: 0.5rem 1rem;
+      flex: 1;
+      padding: 0.5625rem 1rem;
       border: none;
       background: transparent;
-      border-bottom: 2px solid transparent;
+      border-radius: 0.5rem;
       cursor: pointer;
-      font-weight: 500;
-      color: #6b7280;
-      transition: all 150ms ease;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: #64748b;
+      transition: all 0.2s ease;
     }
 
     .level-tab:hover {
-      color: #1f2937;
+      color: #475569;
+      background: rgba(255, 255, 255, 0.5);
     }
 
     .level-tab--active {
-      color: #3b82f6;
-      border-bottom-color: #3b82f6;
+      color: #6366f1;
+      background: white;
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 2px 4px rgba(0, 0, 0, 0.04);
     }
 
     .level-tab:focus-visible {
-      outline: 2px solid #3b82f6;
-      outline-offset: -2px;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
     }
 
     .explanation-section {
-      padding: 0.75rem 0;
+      padding: 1rem 0;
+      animation: section-fade-in 0.3s ease-out;
+    }
+
+    @keyframes section-fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .explanation-section + .explanation-section {
-      border-top: 1px solid #f3f4f6;
+      border-top: 1px solid #f1f5f9;
     }
 
     .section-title {
-      font-weight: 600;
-      font-size: 0.875rem;
-      color: #374151;
-      margin-bottom: 0.5rem;
+      font-weight: 650;
+      font-size: 0.8125rem;
+      color: #475569;
+      margin-bottom: 0.625rem;
+      letter-spacing: -0.01em;
     }
 
     .section-content {
-      color: #6b7280;
-      line-height: 1.6;
+      color: #64748b;
+      line-height: 1.65;
+      font-size: 0.875rem;
     }
 
     .collapsed {

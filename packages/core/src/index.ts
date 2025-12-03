@@ -37,6 +37,9 @@ export * from './components/ai/ai-confidence-meter';
 export * from './components/ai/ai-error-recovery';
 export * from './components/ai/ai-variant-selector';
 export * from './components/ai/ai-prompt-templates';
+export * from './components/ai/ai-progress-indicator';
+export * from './components/ai/ai-toast';
+export * from './components/ai/ai-tooltip';
 
 // Utilities
 export * from './utils/types';

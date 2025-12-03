@@ -44,26 +44,37 @@ export class AISkeleton extends LitElement {
     }
 
     .skeleton {
-      background: var(--ai-skeleton-bg, #e5e7eb);
-      border-radius: 0.25rem;
+      background: var(--ai-skeleton-bg, linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%));
+      border-radius: 0.5rem;
       position: relative;
       overflow: hidden;
+    }
+
+    :host([animated]) .skeleton::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--ai-skeleton-highlight, rgba(255, 255, 255, 0.6)) 50%,
+        transparent 100%
+      );
+      animation: shimmer 1.8s ease-in-out infinite;
     }
 
     :host([animated]) .skeleton::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       background: linear-gradient(
-        90deg,
-        transparent,
-        var(--ai-skeleton-highlight, rgba(255, 255, 255, 0.5)),
-        transparent
+        110deg,
+        transparent 30%,
+        rgba(139, 92, 246, 0.03) 50%,
+        transparent 70%
       );
-      animation: shimmer 2s infinite;
+      animation: shimmer-glow 2.4s ease-in-out infinite;
+      animation-delay: 0.3s;
     }
 
     @keyframes shimmer {
@@ -75,26 +86,42 @@ export class AISkeleton extends LitElement {
       }
     }
 
+    @keyframes shimmer-glow {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
     .skeleton--text {
       height: 1rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.625rem;
+      border-radius: 0.375rem;
     }
 
     .skeleton--text:last-child {
-      width: 80%;
+      width: 75%;
       margin-bottom: 0;
     }
 
     .skeleton--circular {
       border-radius: 50%;
+      box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.02);
     }
 
     .skeleton--rectangular {
-      border-radius: 0.5rem;
+      border-radius: 0.75rem;
     }
 
     .skeleton--custom {
-      border-radius: var(--ai-skeleton-radius, 0.25rem);
+      border-radius: var(--ai-skeleton-radius, 0.5rem);
     }
   `;
 

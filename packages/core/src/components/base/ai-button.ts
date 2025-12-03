@@ -52,6 +52,8 @@ export class AIButton extends LitElement {
   static styles = css`
     :host {
       display: inline-block;
+      --_ai-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+      --_ai-glow: 0 0 20px rgba(139, 92, 246, 0.4);
     }
 
     button {
@@ -59,91 +61,168 @@ export class AIButton extends LitElement {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: var(--ai-button-padding, 0.5rem 1rem);
-      border: var(--ai-button-border, 1px solid transparent);
-      border-radius: var(--ai-button-radius, 0.375rem);
+      gap: 0.625rem;
+      padding: var(--ai-button-padding, 0.625rem 1.25rem);
+      border: var(--ai-button-border, none);
+      border-radius: var(--ai-button-radius, 0.625rem);
       font-family: inherit;
-      font-size: 1rem;
-      font-weight: 500;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
       line-height: 1.5;
       cursor: pointer;
-      transition: all 150ms ease;
-      background: var(--ai-button-bg, #3b82f6);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      background: var(--ai-button-bg, linear-gradient(135deg, #3b82f6 0%, #2563eb 100%));
       color: var(--ai-button-color, white);
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        0 4px 12px rgba(59, 130, 246, 0.15);
+      overflow: hidden;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
     }
 
     button:hover:not(:disabled) {
-      opacity: 0.9;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        0 8px 24px rgba(59, 130, 246, 0.25);
+    }
+
+    button:hover:not(:disabled)::before {
+      opacity: 1;
     }
 
     button:active:not(:disabled) {
       transform: translateY(0);
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        0 2px 8px rgba(59, 130, 246, 0.15);
     }
 
     button:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
+      outline: none;
+      box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.4),
+        0 4px 12px rgba(59, 130, 246, 0.2);
     }
 
     button:disabled {
-      opacity: 0.5;
+      opacity: 0.6;
       cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
 
     /* Variants */
     :host([variant='secondary']) button {
-      background: var(--ai-button-bg, #6b7280);
+      background: var(--ai-button-bg, linear-gradient(135deg, #4b5563 0%, #374151 100%));
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        0 4px 12px rgba(75, 85, 99, 0.15);
+    }
+
+    :host([variant='secondary']) button:hover:not(:disabled) {
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        0 8px 24px rgba(75, 85, 99, 0.25);
     }
 
     :host([variant='ghost']) button {
       background: transparent;
-      border-color: currentColor;
+      border: 1.5px solid rgba(59, 130, 246, 0.3);
       color: var(--ai-button-color, #3b82f6);
+      box-shadow: none;
+    }
+
+    :host([variant='ghost']) button:hover:not(:disabled) {
+      background: rgba(59, 130, 246, 0.08);
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
     }
 
     :host([variant='danger']) button {
-      background: var(--ai-button-bg, #ef4444);
+      background: var(--ai-button-bg, linear-gradient(135deg, #ef4444 0%, #dc2626 100%));
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        0 4px 12px rgba(239, 68, 68, 0.2);
+    }
+
+    :host([variant='danger']) button:hover:not(:disabled) {
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        0 8px 24px rgba(239, 68, 68, 0.3);
+    }
+
+    /* AI Generated styling */
+    :host([aiGenerated]) button {
+      background: var(--_ai-gradient);
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        var(--_ai-glow);
+    }
+
+    :host([aiGenerated]) button:hover:not(:disabled) {
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        0 0 30px rgba(139, 92, 246, 0.5);
     }
 
     /* AI indicator */
     .ai-indicator {
       display: inline-flex;
       align-items: center;
-      gap: 0.25rem;
-      padding: 0.125rem 0.375rem;
-      border-radius: 0.25rem;
-      font-size: 0.75rem;
+      gap: 0.375rem;
+      padding: 0.1875rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
       background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .ai-icon {
-      width: 1rem;
-      height: 1rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      width: 0.875rem;
+      height: 0.875rem;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.6) 100%
+      );
       border-radius: 0.25rem;
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      animation: ai-pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
 
-    @keyframes pulse {
+    @keyframes ai-pulse {
       0%,
       100% {
         opacity: 1;
+        transform: scale(1);
       }
       50% {
-        opacity: 0.5;
+        opacity: 0.7;
+        transform: scale(0.95);
       }
     }
 
     /* Loading state */
     .loading-spinner {
-      width: 1rem;
-      height: 1rem;
-      border: 2px solid currentColor;
-      border-right-color: transparent;
+      width: 1.125rem;
+      height: 1.125rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
       border-radius: 50%;
-      animation: spin 0.6s linear infinite;
+      animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
 
     @keyframes spin {

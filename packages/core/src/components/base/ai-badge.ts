@@ -44,105 +44,150 @@ export class AIBadge extends LitElement {
   static styles = css`
     :host {
       display: inline-block;
+      --_ai-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.375rem;
-      padding: 0.25rem 0.625rem;
+      gap: 0.4375rem;
+      padding: 0.3125rem 0.75rem;
       border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      line-height: 1;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
       white-space: nowrap;
+      transition: all 0.2s ease;
     }
 
-    /* Variants */
+    /* Variants with refined colors */
     .badge--info {
-      background: var(--ai-badge-bg, #dbeafe);
-      color: var(--ai-badge-color, #1e40af);
+      background: var(--ai-badge-bg, linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%));
+      color: var(--ai-badge-color, #0369a1);
+      box-shadow: 0 1px 2px rgba(3, 105, 161, 0.08);
     }
 
     .badge--success {
-      background: var(--ai-badge-bg, #d1fae5);
-      color: var(--ai-badge-color, #065f46);
+      background: var(--ai-badge-bg, linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%));
+      color: var(--ai-badge-color, #15803d);
+      box-shadow: 0 1px 2px rgba(21, 128, 61, 0.08);
     }
 
     .badge--warning {
-      background: var(--ai-badge-bg, #fef3c7);
-      color: var(--ai-badge-color, #92400e);
+      background: var(--ai-badge-bg, linear-gradient(135deg, #fef3c7 0%, #fde68a 100%));
+      color: var(--ai-badge-color, #b45309);
+      box-shadow: 0 1px 2px rgba(180, 83, 9, 0.08);
     }
 
     .badge--error {
-      background: var(--ai-badge-bg, #fee2e2);
-      color: var(--ai-badge-color, #991b1b);
+      background: var(--ai-badge-bg, linear-gradient(135deg, #fee2e2 0%, #fecaca 100%));
+      color: var(--ai-badge-color, #dc2626);
+      box-shadow: 0 1px 2px rgba(220, 38, 38, 0.08);
     }
 
     .badge--ai {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--_ai-gradient);
+      background-size: 200% 200%;
       color: white;
-      animation: shimmer 3s linear infinite;
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        0 0 12px rgba(139, 92, 246, 0.25);
+      animation: ai-shimmer 3s ease-in-out infinite;
     }
 
-    @keyframes shimmer {
-      0% {
+    @keyframes ai-shimmer {
+      0%,
+      100% {
         background-position: 0% 50%;
       }
       50% {
         background-position: 100% 50%;
       }
-      100% {
-        background-position: 0% 50%;
-      }
     }
 
-    /* AI indicator */
+    /* AI indicator icon */
     .ai-icon {
       width: 0.75rem;
       height: 0.75rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 0.25rem;
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      background: var(--_ai-gradient);
+      border-radius: 0.1875rem;
+      animation: ai-icon-pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 6px rgba(139, 92, 246, 0.4);
     }
 
-    @keyframes pulse {
+    @keyframes ai-icon-pulse {
       0%,
       100% {
         opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 6px rgba(139, 92, 246, 0.4);
       }
       50% {
-        opacity: 0.5;
+        opacity: 0.8;
+        transform: scale(0.92);
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
       }
     }
 
-    /* Dot indicator */
+    /* Dot indicator with glow */
     .dot {
-      width: 0.5rem;
-      height: 0.5rem;
+      width: 0.4375rem;
+      height: 0.4375rem;
       border-radius: 50%;
       background: currentColor;
+      animation: dot-pulse 2s ease-in-out infinite;
     }
 
-    /* Confidence meter */
+    @keyframes dot-pulse {
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 currentColor;
+      }
+      50% {
+        opacity: 0.8;
+        box-shadow: 0 0 0 3px transparent;
+      }
+    }
+
+    .badge--success .dot {
+      animation: dot-pulse-success 2s ease-in-out infinite;
+    }
+
+    @keyframes dot-pulse-success {
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 0 4px rgba(21, 128, 61, 0);
+      }
+    }
+
+    /* Confidence meter - refined */
     .confidence {
       display: inline-flex;
       align-items: center;
-      gap: 0.25rem;
+      gap: 0.375rem;
+      margin-left: 0.125rem;
     }
 
     .confidence-bar {
-      width: 2rem;
+      width: 2.25rem;
       height: 0.25rem;
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 0.125rem;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 9999px;
       overflow: hidden;
+      backdrop-filter: blur(4px);
     }
 
     .confidence-fill {
       height: 100%;
-      background: currentColor;
-      transition: width 300ms ease;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 9999px;
+      transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
     }
   `;
 

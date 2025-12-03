@@ -59,22 +59,30 @@ export class AIStreamingText extends LitElement {
 
     .cursor {
       display: inline-block;
-      width: 0.125rem;
-      height: 1em;
-      background: var(--ai-streaming-cursor, currentColor);
-      margin-left: 0.125rem;
-      animation: blink 1s step-end infinite;
+      width: 2px;
+      height: 1.1em;
+      background: linear-gradient(180deg, #8b5cf6 0%, #6366f1 100%);
+      margin-left: 2px;
+      animation: cursor-blink 1.1s ease-in-out infinite;
       vertical-align: text-bottom;
+      border-radius: 1px;
+      box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
     }
 
-    @keyframes blink {
+    @keyframes cursor-blink {
       0%,
-      50% {
+      45% {
         opacity: 1;
+        transform: scaleY(1);
       }
-      51%,
+      50% {
+        opacity: 0.3;
+        transform: scaleY(0.8);
+      }
+      55%,
       100% {
-        opacity: 0;
+        opacity: 1;
+        transform: scaleY(1);
       }
     }
   `;

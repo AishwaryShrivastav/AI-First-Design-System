@@ -56,49 +56,54 @@ export class AIConfidenceMeter extends LitElement {
     .container {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1rem;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .container--interactive {
       cursor: pointer;
-      transition: transform 150ms;
     }
 
     .container--interactive:hover {
-      transform: scale(1.02);
+      transform: translateY(-2px);
+      background: rgba(99, 102, 241, 0.04);
     }
 
     .meter-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 0.375rem;
+      gap: 0.5rem;
     }
 
     .meter-label {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #374151;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #475569;
+      letter-spacing: -0.01em;
     }
 
     .meter-track {
       position: relative;
-      background: #e5e7eb;
+      background: linear-gradient(90deg, #f1f5f9 0%, #e2e8f0 100%);
       border-radius: 9999px;
       overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
     }
 
     .meter-track--small {
-      width: 60px;
+      width: 70px;
       height: 6px;
     }
 
     .meter-track--medium {
-      width: 100px;
+      width: 110px;
       height: 8px;
     }
 
     .meter-track--large {
-      width: 150px;
+      width: 160px;
       height: 10px;
     }
 
@@ -109,35 +114,39 @@ export class AIConfidenceMeter extends LitElement {
       bottom: 0;
       border-radius: 9999px;
       transition:
-        width 300ms ease,
+        width 500ms cubic-bezier(0.4, 0, 0.2, 1),
         background 300ms ease;
     }
 
     .meter-fill--high {
-      background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+      background: linear-gradient(90deg, #22c55e 0%, #10b981 50%, #14b8a6 100%);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
     }
 
     .meter-fill--medium {
-      background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+      background: linear-gradient(90deg, #f59e0b 0%, #f97316 50%, #fb923c 100%);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
     }
 
     .meter-fill--low {
-      background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+      background: linear-gradient(90deg, #ef4444 0%, #f43f5e 50%, #fb7185 100%);
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
     }
 
     .meter-info {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.625rem;
     }
 
     .confidence-percentage {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.875rem;
+      font-variant-numeric: tabular-nums;
     }
 
     .confidence-percentage--high {
-      color: #16a34a;
+      color: #059669;
     }
 
     .confidence-percentage--medium {
@@ -149,25 +158,30 @@ export class AIConfidenceMeter extends LitElement {
     }
 
     .confidence-label {
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
-      font-size: 0.75rem;
-      font-weight: 600;
+      padding: 0.3125rem 0.625rem;
+      border-radius: 9999px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
 
     .confidence-label--high {
-      background: #dcfce7;
+      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
       color: #166534;
+      box-shadow: 0 1px 2px rgba(22, 101, 52, 0.08);
     }
 
     .confidence-label--medium {
-      background: #fef3c7;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
       color: #92400e;
+      box-shadow: 0 1px 2px rgba(146, 64, 14, 0.08);
     }
 
     .confidence-label--low {
-      background: #fee2e2;
+      background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
       color: #991b1b;
+      box-shadow: 0 1px 2px rgba(153, 27, 27, 0.08);
     }
 
     .circular-meter {
@@ -175,26 +189,28 @@ export class AIConfidenceMeter extends LitElement {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
     }
 
     .circular-meter--small {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
     }
 
     .circular-meter--medium {
-      width: 64px;
-      height: 64px;
+      width: 72px;
+      height: 72px;
     }
 
     .circular-meter--large {
-      width: 80px;
-      height: 80px;
+      width: 92px;
+      height: 92px;
     }
 
     .circular-percentage {
-      font-weight: 700;
-      font-size: 0.875rem;
+      font-weight: 800;
+      font-size: 0.9375rem;
+      font-variant-numeric: tabular-nums;
     }
 
     svg {
@@ -203,13 +219,14 @@ export class AIConfidenceMeter extends LitElement {
 
     .circle-bg {
       fill: none;
-      stroke: #e5e7eb;
+      stroke: #f1f5f9;
     }
 
     .circle-progress {
       fill: none;
       stroke-linecap: round;
-      transition: stroke-dashoffset 300ms ease;
+      transition: stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      filter: drop-shadow(0 0 6px currentColor);
     }
   `;
 

@@ -54,12 +54,13 @@ export class AIChatMessage extends LitElement {
   static styles = css`
     :host {
       display: block;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      --_ai-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
     }
 
     .message-wrapper {
       display: flex;
-      gap: 0.75rem;
+      gap: 1rem;
       align-items: flex-start;
     }
 
@@ -69,63 +70,102 @@ export class AIChatMessage extends LitElement {
 
     .avatar {
       flex-shrink: 0;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.75rem;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 600;
       font-size: 0.875rem;
+      box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.06),
+        0 4px 8px rgba(0, 0, 0, 0.06);
     }
 
     :host([role='user']) .avatar {
-      background: #3b82f6;
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
       color: white;
     }
 
     :host([role='ai']) .avatar {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: var(--_ai-gradient);
       color: white;
+      box-shadow:
+        0 2px 4px rgba(99, 102, 241, 0.15),
+        0 4px 12px rgba(139, 92, 246, 0.2);
+      animation: ai-avatar-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes ai-avatar-glow {
+      0%,
+      100% {
+        box-shadow:
+          0 2px 4px rgba(99, 102, 241, 0.15),
+          0 4px 12px rgba(139, 92, 246, 0.2);
+      }
+      50% {
+        box-shadow:
+          0 2px 8px rgba(99, 102, 241, 0.25),
+          0 4px 16px rgba(139, 92, 246, 0.35);
+      }
     }
 
     :host([role='system']) .avatar {
-      background: #6b7280;
+      background: linear-gradient(135deg, #64748b 0%, #475569 100%);
       color: white;
     }
 
     .message-content {
       flex: 1;
       min-width: 0;
+      max-width: 80%;
     }
 
     .message-bubble {
-      padding: 0.75rem 1rem;
-      border-radius: var(--ai-message-radius, 0.75rem);
-      background: var(--ai-message-bg, #f3f4f6);
-      color: var(--ai-message-color, inherit);
+      padding: 0.875rem 1.125rem;
+      border-radius: var(--ai-message-radius, 1rem);
+      background: var(--ai-message-bg, #f8fafc);
+      color: var(--ai-message-color, #1e293b);
       word-wrap: break-word;
+      line-height: 1.6;
+      font-size: 0.9375rem;
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.03),
+        0 2px 4px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    :host([role='ai']) .message-bubble {
+      border-radius: 1rem 1rem 1rem 0.25rem;
+      background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 50%, #f0f9ff 100%);
+      border-color: rgba(139, 92, 246, 0.08);
     }
 
     :host([role='user']) .message-bubble {
-      background: var(--ai-message-bg, #3b82f6);
+      border-radius: 1rem 1rem 0.25rem 1rem;
+      background: var(--ai-message-bg, linear-gradient(135deg, #3b82f6 0%, #2563eb 100%));
       color: var(--ai-message-color, white);
+      border: none;
+      box-shadow:
+        0 2px 4px rgba(59, 130, 246, 0.15),
+        0 4px 12px rgba(37, 99, 235, 0.2);
     }
 
     :host([error]) .message-bubble {
-      background: #fee2e2;
-      border: 1px solid #ef4444;
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border: 1px solid rgba(239, 68, 68, 0.2);
       color: #991b1b;
     }
 
     .message-meta {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.25rem;
-      padding: 0 0.25rem;
+      gap: 0.625rem;
+      margin-top: 0.375rem;
+      padding: 0 0.375rem;
       font-size: 0.75rem;
-      color: #6b7280;
+      color: #94a3b8;
     }
 
     :host([role='user']) .message-meta {
@@ -136,6 +176,8 @@ export class AIChatMessage extends LitElement {
       display: inline-flex;
       gap: 0.25rem;
       align-items: center;
+      color: #8b5cf6;
+      font-weight: 500;
     }
 
     .streaming-dot {
@@ -143,24 +185,26 @@ export class AIChatMessage extends LitElement {
       height: 0.375rem;
       border-radius: 50%;
       background: currentColor;
-      animation: pulse 1.5s ease-in-out infinite;
+      animation: streaming-pulse 1.4s ease-in-out infinite;
     }
 
     .streaming-dot:nth-child(2) {
-      animation-delay: 0.2s;
+      animation-delay: 0.15s;
     }
 
     .streaming-dot:nth-child(3) {
-      animation-delay: 0.4s;
+      animation-delay: 0.3s;
     }
 
-    @keyframes pulse {
+    @keyframes streaming-pulse {
       0%,
       100% {
         opacity: 0.3;
+        transform: scale(0.8);
       }
       50% {
         opacity: 1;
+        transform: scale(1);
       }
     }
 
@@ -168,7 +212,7 @@ export class AIChatMessage extends LitElement {
       display: flex;
       gap: 0.25rem;
       opacity: 0;
-      transition: opacity 150ms ease;
+      transition: opacity 0.2s ease;
     }
 
     :host(:hover) .message-actions,
@@ -177,22 +221,28 @@ export class AIChatMessage extends LitElement {
     }
 
     .action-button {
-      padding: 0.375rem;
+      padding: 0.4375rem;
       border: none;
       background: transparent;
-      border-radius: 0.375rem;
+      border-radius: 0.5rem;
       cursor: pointer;
-      color: #6b7280;
-      transition: all 150ms ease;
+      color: #94a3b8;
+      transition: all 0.15s ease;
+      font-size: 0.875rem;
     }
 
     .action-button:hover {
-      background: #f3f4f6;
-      color: #1f2937;
+      background: rgba(99, 102, 241, 0.08);
+      color: #6366f1;
+      transform: scale(1.05);
+    }
+
+    .action-button:active {
+      transform: scale(0.95);
     }
 
     .action-button:focus-visible {
-      outline: 2px solid #3b82f6;
+      outline: 2px solid #6366f1;
       outline-offset: 2px;
     }
   `;
