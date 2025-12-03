@@ -1,6 +1,6 @@
 {
   "name": "ai-first-design-system",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "AI-First Design System - Core Web Components",
   "type": "module",
   "main": "./dist/index.js",

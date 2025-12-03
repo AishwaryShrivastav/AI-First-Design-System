@@ -1,6 +1,6 @@
 {
   "name": "@ai-first-ds/react",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "React wrappers for AI-First Design System",
   "type": "module",
   "main": "./dist/index.js",
