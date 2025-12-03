@@ -45,5 +45,6 @@
     "url": "https://github.com/AishwaryShrivastav/AI-First-Design-System.git",
     "directory": "packages/core"
   },
+  "readmeFilename": "README.md",
   "license": "MIT"
 }
