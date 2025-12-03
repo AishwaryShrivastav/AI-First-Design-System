@@ -39,7 +39,7 @@ All planned components and infrastructure have been successfully implemented acc
 
 ### Framework Support
 
-✅ **Core Package** (`@ai-first-ds/core`) - Web Components, framework-agnostic  
+✅ **Core Package** (`ai-first-design-system`) - Web Components, framework-agnostic  
 ✅ **React Package** (`@ai-first-ds/react`) - React wrappers with TypeScript  
 ✅ **Design Tokens** (`@ai-first-ds/tokens`) - Shared design tokens
 
@@ -85,7 +85,7 @@ Every design decision is backed by trusted sources:
 
 ```bash
 # Core components
-npm install @ai-first-ds/core
+npm install ai-first-design-system
 
 # React wrappers
 npm install @ai-first-ds/react
@@ -117,7 +117,7 @@ function App() {
 ```html
 <!-- Vanilla JS / Web Components -->
 <script type="module">
-  import '@ai-first-ds/core';
+  import 'ai-first-design-system';
 </script>
 
 <ai-button variant="primary" aiGenerated confidence="0.95"> AI Suggested Action </ai-button>
@@ -292,7 +292,7 @@ This project builds on research and best practices from:
 
 - **Documentation**: [Storybook](https://your-storybook-url.com)
 - **Repository**: [GitHub](https://github.com/yourusername/ai-first-design-system)
-- **npm**: [`@ai-first-ds/core`](https://www.npmjs.com/package/@ai-first-ds/core)
+- **npm**: [`ai-first-design-system`](https://www.npmjs.com/package/ai-first-design-system)
 - **Issues**: [Report bugs](https://github.com/yourusername/ai-first-design-system/issues)
 - **Discussions**: [Ask questions](https://github.com/yourusername/ai-first-design-system/discussions)
 

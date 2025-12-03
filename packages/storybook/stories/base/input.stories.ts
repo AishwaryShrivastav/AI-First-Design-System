@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/base/ai-input';
+import 'ai-first-design-system/components/base/ai-input';
 
 /**
  * AI-enhanced input component with support for suggestions and autocomplete.

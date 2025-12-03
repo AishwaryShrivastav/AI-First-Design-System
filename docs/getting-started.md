@@ -10,7 +10,7 @@ Install the core package and optionally framework-specific wrappers:
 
 ```bash
 # Core components (framework-agnostic)
-npm install @ai-first-ds/core
+npm install ai-first-design-system
 
 # React wrappers
 npm install @ai-first-ds/react
@@ -27,7 +27,7 @@ npm install @ai-first-ds/icons
 For quick prototyping, you can use our CDN:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@ai-first-ds/core@latest"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ai-first-design-system@latest"></script>
 ```
 
 ## Quick Start
@@ -47,7 +47,7 @@ For quick prototyping, you can use our CDN:
     <ai-chat-message role="ai">Hello! How can I help you today?</ai-chat-message>
 
     <script type="module">
-      import '@ai-first-ds/core';
+      import 'ai-first-design-system';
 
       const button = document.querySelector('ai-button');
       button.addEventListener('click', () => {
@@ -156,7 +156,7 @@ export default {
 All packages include full TypeScript definitions:
 
 ```typescript
-import type { ButtonVariant, AIRole, Confidence } from '@ai-first-ds/core';
+import type { ButtonVariant, AIRole, Confidence } from 'ai-first-design-system';
 
 const variant: ButtonVariant = 'primary';
 const role: AIRole = 'ai';

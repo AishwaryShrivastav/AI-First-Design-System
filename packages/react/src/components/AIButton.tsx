@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import type { ButtonVariant, Confidence } from '@ai-first-ds/core';
+import type { ButtonVariant, Confidence } from 'ai-first-design-system';
 
 /**
  * React wrapper for ai-button component

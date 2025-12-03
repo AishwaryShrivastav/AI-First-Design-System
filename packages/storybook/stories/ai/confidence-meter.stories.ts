@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-confidence-meter';
+import 'ai-first-design-system/components/ai/ai-confidence-meter';
 
 /**
  * AI Confidence Meter Component

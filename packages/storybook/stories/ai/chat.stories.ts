@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-chat-message';
-import '@ai-first-ds/core/components/ai/ai-chat-interface';
+import 'ai-first-design-system/components/ai/ai-chat-message';
+import 'ai-first-design-system/components/ai/ai-chat-interface';
 
 /**
  * AI chat components for conversational interfaces.

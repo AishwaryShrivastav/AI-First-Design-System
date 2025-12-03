@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-label';
+import 'ai-first-design-system/components/ai/ai-label';
 
 /**
  * AI label component to clearly mark AI-generated content.

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-streaming-text';
+import 'ai-first-design-system/components/ai/ai-streaming-text';
 
 /**
  * Streaming text component that displays text token-by-token for AI responses.

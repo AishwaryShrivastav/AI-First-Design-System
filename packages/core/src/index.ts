@@ -11,7 +11,7 @@
  * @example
  * ```html
  * <script type="module">
- *   import '@ai-first-ds/core';
+ *   import 'ai-first-design-system';
  * </script>
  *
  * <ai-button variant="primary">Click me</ai-button>

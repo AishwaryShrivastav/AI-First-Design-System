@@ -1,5 +1,5 @@
 import { createReactComponent } from '../create-react-component';
-import type { Confidence } from '@ai-first-ds/core';
+import type { Confidence } from 'ai-first-design-system';
 
 export interface AIBadgeProps {
   variant?: 'info' | 'success' | 'warning' | 'error' | 'ai';

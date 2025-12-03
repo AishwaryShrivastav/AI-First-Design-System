@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ai-first-ds/core": "workspace:*"
+    "ai-first-design-system": "workspace:*"
   },
   "devDependencies": {
     "vite": "^5.1.0"

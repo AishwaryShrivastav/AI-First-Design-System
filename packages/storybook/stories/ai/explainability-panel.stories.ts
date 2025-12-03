@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-explainability-panel';
+import 'ai-first-design-system/components/ai/ai-explainability-panel';
 
 /**
  * AI explainability panel with progressive disclosure (What/Why/How).

@@ -184,7 +184,7 @@ Create `packages/storybook/stories/ai-button.stories.ts`:
 ```typescript
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai-button';
+import 'ai-first-design-system/components/ai-button';
 
 const meta: Meta = {
   title: 'Components/Button',
@@ -222,7 +222,7 @@ Create a comprehensive Storybook story following our standards:
 ```typescript
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/base/ai-button';
+import 'ai-first-design-system/components/base/ai-button';
 
 const meta: Meta = {
   title: 'Base Components/Button',

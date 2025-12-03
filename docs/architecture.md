@@ -34,7 +34,7 @@ The AI-First Design System is built as a monorepo containing multiple packages t
 
 ## Package Structure
 
-### 1. Core Package (`@ai-first-ds/core`)
+### 1. Core Package (`ai-first-design-system`)
 
 **Technology:** Lit (Web Components)  
 **Purpose:** Framework-agnostic components  

@@ -25,7 +25,7 @@
     /* Path aliases */
     "baseUrl": ".",
     "paths": {
-      "@ai-first-ds/core": ["./packages/core/src"],
+      "ai-first-design-system": ["./packages/core/src"],
       "@ai-first-ds/tokens": ["./packages/tokens/src"],
       "@ai-first-ds/react": ["./packages/react/src"]
     }

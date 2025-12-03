@@ -4,7 +4,7 @@
 
 ## Available Packages
 
-### @ai-first-ds/core
+### ai-first-design-system
 
 **Framework-agnostic Web Components**
 
@@ -12,13 +12,13 @@ The foundation of the design system. Built with Lit, works with any framework.
 
 - **Location**: `packages/core/`
 - **Build Output**: `packages/core/dist/`
-- **Install**: `npm install @ai-first-ds/core`
+- **Install**: `npm install ai-first-design-system`
 - **Usage**: Import components directly or use as custom elements
 - **Dependencies**: Lit, TypeScript
 
 ```html
 <script type="module">
-  import '@ai-first-ds/core';
+  import 'ai-first-design-system';
 </script>
 <ai-button variant="primary">Click me</ai-button>
 ```
@@ -35,7 +35,7 @@ React-friendly wrappers around core components with proper typing and event hand
 - **Build Output**: `packages/react/dist/`
 - **Install**: `npm install @ai-first-ds/react`
 - **Usage**: Import as React components
-- **Dependencies**: @ai-first-ds/core, React
+- **Dependencies**: ai-first-design-system, React
 
 ```tsx
 import { AIButton, AIChatMessage } from '@ai-first-ds/react';
@@ -98,7 +98,7 @@ Interactive component documentation and examples.
 
 ## When to Use Which Package
 
-### Use `@ai-first-ds/core` when:
+### Use `ai-first-design-system` when:
 
 - Building with vanilla JavaScript
 - Using any framework (Vue, Svelte, Angular, etc.)
@@ -183,7 +183,7 @@ All packages can reference each other during development using workspace protoco
 ```json
 {
   "dependencies": {
-    "@ai-first-ds/core": "workspace:*",
+    "ai-first-design-system": "workspace:*",
     "@ai-first-ds/tokens": "workspace:*"
   }
 }
@@ -197,11 +197,11 @@ This is resolved to actual versions during publishing.
 
 ```typescript
 // Main entry point
-import '@ai-first-ds/core';
+import 'ai-first-design-system';
 
 // Named exports
-import { AIButton, AIChatMessage } from '@ai-first-ds/core';
-import type { ButtonVariant, AIRole } from '@ai-first-ds/core';
+import { AIButton, AIChatMessage } from 'ai-first-design-system';
+import type { ButtonVariant, AIRole } from 'ai-first-design-system';
 ```
 
 ### React Package

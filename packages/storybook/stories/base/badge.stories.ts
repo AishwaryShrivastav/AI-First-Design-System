@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/base/ai-badge';
+import 'ai-first-design-system/components/base/ai-badge';
 
 /**
  * AI-enhanced badge component for displaying labels, confidence scores, and AI indicators.

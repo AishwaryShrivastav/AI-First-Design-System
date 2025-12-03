@@ -1,5 +1,5 @@
 import { createReactComponent } from '../create-react-component';
-import type { InputSize } from '@ai-first-ds/core';
+import type { InputSize } from 'ai-first-design-system';
 
 export interface AIInputProps {
   value?: string;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/base/ai-button';
+import 'ai-first-design-system/components/base/ai-button';
 
 /**
  * AI-enhanced button component with support for AI-generated actions and confidence indicators.

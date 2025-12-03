@@ -2,7 +2,7 @@
  * Vanilla JavaScript example using AI-First Design System
  */
 
-import '@ai-first-ds/core';
+import 'ai-first-design-system';
 
 console.log('✨ AI-First Design System loaded!');
 

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-prompt-input';
+import 'ai-first-design-system/components/ai/ai-prompt-input';
 
 /**
  * Advanced prompt input component designed for AI interactions.

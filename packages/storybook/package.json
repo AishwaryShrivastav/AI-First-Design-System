@@ -9,7 +9,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@ai-first-ds/core": "*",
+    "ai-first-design-system": "*",
     "@ai-first-ds/tokens": "*"
   },
   "devDependencies": {

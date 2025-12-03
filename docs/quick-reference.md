@@ -147,9 +147,9 @@ ai-first-design-system/
 ### Core (Web Components)
 
 ```javascript
-import '@ai-first-ds/core';
+import 'ai-first-design-system';
 // or specific components
-import { AIButton, AIChatMessage } from '@ai-first-ds/core';
+import { AIButton, AIChatMessage } from 'ai-first-design-system';
 ```
 
 ### React
@@ -243,7 +243,7 @@ test(ai-input): add validation tests
 
 - [Storybook](https://your-storybook-url.com) - Component docs
 - [GitHub](https://github.com/AishwaryShrivastav/AI-First-Design-System) - Repository
-- [npm](https://www.npmjs.com/package/@ai-first-ds/core) - Package
+- [npm](https://www.npmjs.com/package/ai-first-design-system) - Package
 - [Contributing](./CONTRIBUTING.md) - Contribution guide
 - [Coding Standards](./CODING_STANDARDS.md) - Code guidelines
 

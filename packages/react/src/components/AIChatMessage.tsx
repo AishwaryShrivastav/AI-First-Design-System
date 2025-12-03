@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import type { AIRole } from '@ai-first-ds/core';
+import type { AIRole } from 'ai-first-design-system';
 
 /**
  * React wrapper for ai-chat-message component

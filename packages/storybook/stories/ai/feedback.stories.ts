@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-feedback';
+import 'ai-first-design-system/components/ai/ai-feedback';
 
 /**
  * AI feedback component for collecting user feedback on AI outputs.

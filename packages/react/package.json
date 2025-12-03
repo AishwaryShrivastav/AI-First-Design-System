@@ -20,7 +20,7 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@ai-first-ds/core": "*"
+    "ai-first-design-system": "*"
   },
   "peerDependencies": {
     "react": "^18.0.0",

@@ -10,10 +10,10 @@
 
 **Version**: 0.2.0  
 **Components**: 14 (all documented in Storybook)  
-**Install**: `npm install @ai-first-ds/core` or `@ai-first-ds/react`  
+**Install**: `npm install ai-first-design-system` or `@ai-first-ds/react`  
 **Docs**: Quick start below | [Full Guide](./docs/getting-started.md) | [Storybook Guide](./packages/storybook/STORYBOOK_GUIDE.md) | [Components](./.ai/component-index.md)
 
-[![npm version](https://badge.fury.io/js/%40ai-first-ds%2Fcore.svg)](https://www.npmjs.com/package/@ai-first-ds/core)
+[![npm version](https://badge.fury.io/js/ai-first-design-system.svg)](https://www.npmjs.com/package/ai-first-design-system)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/AishwaryShrivastav/AI-First-Design-System/actions/workflows/ci.yml/badge.svg)](https://github.com/AishwaryShrivastav/AI-First-Design-System/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/AishwaryShrivastav/AI-First-Design-System/branch/main/graph/badge.svg)](https://codecov.io/gh/AishwaryShrivastav/AI-First-Design-System)
@@ -36,7 +36,7 @@ test_framework: Vitest + Playwright
 package_manager: npm
 
 packages:
-  - name: '@ai-first-ds/core'
+  - name: 'ai-first-design-system'
     type: web_components
     framework_agnostic: true
   - name: '@ai-first-ds/react'
@@ -95,13 +95,12 @@ Based on research from leading design systems:
 ## 📦 Packages
 
 ```
-@ai-first-ds/
-  ├── core          # Web Components (framework-agnostic)
-  ├── react         # React wrappers
-  ├── vue           # Vue wrappers
-  ├── svelte        # Svelte wrappers
-  ├── tokens        # Design tokens
-  └── icons         # Icon library
+packages/
+  ├── ai-first-design-system   # Web Components (framework-agnostic)
+  ├── @ai-first-ds/react       # React wrappers
+  ├── @ai-first-ds/tokens      # Design tokens
+  ├── packages/storybook       # Storybook docs
+  └── examples/*               # Usage samples
 ```
 
 ## 🚀 Quick Start
@@ -110,7 +109,7 @@ Based on research from leading design systems:
 
 ```bash
 # Core components (framework-agnostic)
-npm install @ai-first-ds/core
+npm install ai-first-design-system
 
 # React
 npm install @ai-first-ds/react
@@ -128,7 +127,7 @@ npm install @ai-first-ds/svelte
 
 ```html
 <script type="module">
-  import '@ai-first-ds/core';
+  import 'ai-first-design-system';
 </script>
 
 <ai-chat-message role="ai" streaming> Hello! How can I help you today? </ai-chat-message>
@@ -270,4 +269,4 @@ This design system is built on the shoulders of giants. We drew inspiration and 
 ## 🔗 Links
 
 - [GitHub](https://github.com/AishwaryShrivastav/AI-First-Design-System)
-- [npm](https://www.npmjs.com/package/@ai-first-ds/core)
+- [npm](https://www.npmjs.com/package/ai-first-design-system)

@@ -1,5 +1,5 @@
 import { createReactComponent } from '../create-react-component';
-import type { ExplainabilityLevel } from '@ai-first-ds/core';
+import type { ExplainabilityLevel } from 'ai-first-design-system';
 
 export interface AIExplainabilityPanelProps {
   level?: ExplainabilityLevel;

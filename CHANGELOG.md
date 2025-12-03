@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial release of AI-First Design System
-- Core web components library (`@ai-first-ds/core`)
+- Core web components library (`ai-first-design-system`)
 - React wrapper package (`@ai-first-ds/react`)
 - Design token system (`@ai-first-ds/tokens`)
 - Comprehensive Storybook documentation

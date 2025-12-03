@@ -21,7 +21,7 @@
  */
 
 // Import core components to register custom elements
-import '@ai-first-ds/core';
+import 'ai-first-design-system';
 
 // Export React wrappers
 export * from './components/AIButton';
@@ -45,4 +45,4 @@ export type {
   InputSize,
   ThemeMode,
   ExplainabilityLevel,
-} from '@ai-first-ds/core';
+} from 'ai-first-design-system';

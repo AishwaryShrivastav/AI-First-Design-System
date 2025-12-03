@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-skeleton';
+import 'ai-first-design-system/components/ai/ai-skeleton';
 
 /**
  * AI skeleton loader component for content placeholders during AI generation.

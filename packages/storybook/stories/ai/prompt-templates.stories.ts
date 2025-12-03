@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import '@ai-first-ds/core/components/ai/ai-prompt-templates';
+import 'ai-first-design-system/components/ai/ai-prompt-templates';
 
 /**
  * AI Prompt Templates Component
