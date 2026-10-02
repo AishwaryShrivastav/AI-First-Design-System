@@ -114,11 +114,7 @@ npm install ai-first-design-system
 # React
 npm install @ai-first-ds/react
 
-# Vue
-npm install @ai-first-ds/vue
-
-# Svelte
-npm install @ai-first-ds/svelte
+# Vue and Svelte wrappers (@ai-first-ds/vue, @ai-first-ds/svelte): planned, not yet published to npm
 ```
 
 ### Usage
@@ -152,7 +148,7 @@ function App() {
 }
 ```
 
-#### Vue
+#### Vue (planned, not yet published)
 
 ```vue
 <script setup>
