@@ -10,7 +10,7 @@
 
 **Version**: 0.2.0  
 **Components**: 14 (all documented in Storybook)  
-**Install**: `npm install ai-first-design-system` or `@ai-first-ds/react`  
+**Install**: `npm install ai-first-design-system` (core), `npm install @ai-first-ds/react` (React), or `npm install @ai-first-ds/tokens` (tokens)
 **Docs**: Quick start below | [Full Guide](./docs/getting-started.md) | [Storybook Guide](./packages/storybook/STORYBOOK_GUIDE.md) | [Components](./.ai/component-index.md)
 
 [![npm version](https://badge.fury.io/js/ai-first-design-system.svg)](https://www.npmjs.com/package/ai-first-design-system)
@@ -114,8 +114,11 @@ npm install ai-first-design-system
 # React
 npm install @ai-first-ds/react
 
-# Vue and Svelte wrappers (@ai-first-ds/vue, @ai-first-ds/svelte): planned, not yet published to npm
+# Design tokens
+npm install @ai-first-ds/tokens
 ```
+
+Vue and Svelte can use the core Web Components directly. Framework-specific wrappers are planned but are not published yet.
 
 ### Usage
 
@@ -146,19 +149,6 @@ function App() {
     </>
   );
 }
-```
-
-#### Vue (planned, not yet published)
-
-```vue
-<script setup>
-import { AIChatMessage, AIPromptInput } from '@ai-first-ds/vue';
-</script>
-
-<template>
-  <AIChatMessage role="ai" streaming> Hello! How can I help you today? </AIChatMessage>
-  <AIPromptInput placeholder="Ask me anything..." />
-</template>
 ```
 
 ## 🧩 Component Categories
