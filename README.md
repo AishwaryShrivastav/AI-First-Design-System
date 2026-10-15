@@ -56,7 +56,7 @@ component_pattern: |
   Lit-based Web Components with:
   - Comprehensive JSDoc (@element, @prop, @fires, @accessibility, @reference)
   - TypeScript strict mode
-  - WCAG 2.2 Level AA accessibility
+  - Accessibility patterns that need testing in the consuming app
   - Research-backed AI design patterns
 ```
 
@@ -122,16 +122,20 @@ Vue and Svelte can use the core Web Components directly. Framework-specific wrap
 
 ### Usage
 
-#### Vanilla JavaScript / Web Components
+#### Web Components in a bundled app
+
+Import the package from your Vite or other bundled app's JavaScript entry file:
+
+```js
+import 'ai-first-design-system';
+```
+
+Then use its custom elements in HTML:
 
 ```html
-<script type="module">
-  import 'ai-first-design-system';
-</script>
-
 <ai-chat-message role="ai" streaming> Hello! How can I help you today? </ai-chat-message>
 
-<ai-prompt-input placeholder="Ask me anything..." />
+<ai-prompt-input placeholder="Ask me anything..."></ai-prompt-input>
 ```
 
 #### React
@@ -153,22 +157,18 @@ function App() {
 
 ## 🧩 Component Categories
 
-### Base Components (AI-Enhanced)
+### Base Components
 
-- Button, Input, Select, Checkbox, Radio, Toggle
-- Textarea, Tooltip, Badge, Avatar, Card
-- Modal/Dialog, Dropdown, Tabs, Accordion
-- Progress, Skeleton
+- Button, input, badge
 
 ### AI-Specific Components
 
 - **Conversational**: Chat interface, message bubbles, streaming text
-- **Input**: Prompt input, autocomplete, templates
+- **Input**: Prompt input and prompt templates
 - **Transparency**: AI labels, explainability panels, feedback tools
 - **Loading**: Streaming indicators, skeleton loaders, processing states
-- **Visualization**: Insights dashboards, confidence meters, content display
-- **Suggestions**: Inline suggestions, recommendation cards, smart search
-- **Safety**: Error states, content warnings, fallback patterns
+- **Display**: Confidence meter, variant selector, tooltip
+- **Recovery**: Error recovery and fallback states
 
 ## 🎨 Theming
 
@@ -211,7 +211,7 @@ npm run storybook
 - **[Storybook Guide](./packages/storybook/STORYBOOK_GUIDE.md)** - Complete Storybook documentation standards
 - **[Component Index](./.ai/component-index.md)** - All components with examples
 - **[AI Design Principles](./docs/ai-principles.md)** - Core design philosophy
-- **[Accessibility Guide](./docs/accessibility.md)** - WCAG compliance details
+- **[Accessibility Guide](./docs/accessibility.md)** - Keyboard, ARIA, and product testing guidance
 - **[Customization](./docs/customization.md)** - Theming and styling guide
 - **[Coding Standards](./CODING_STANDARDS.md)** - Code conventions
 - **[Contributing Guide](./CONTRIBUTING.md)** - How to contribute

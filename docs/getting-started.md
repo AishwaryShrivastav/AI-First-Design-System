@@ -6,7 +6,7 @@ Welcome to the AI-First Design System! This guide will help you get up and runni
 
 ### Package Manager
 
-Install the core package and optionally framework-specific wrappers:
+Install the core package and optionally the published React bindings or tokens:
 
 ```bash
 # Core components (framework-agnostic)
@@ -18,21 +18,23 @@ npm install @ai-first-ds/react
 # Design tokens
 npm install @ai-first-ds/tokens
 
-# Icons (optional)
-npm install @ai-first-ds/icons
-```
-
-### CDN
-
-For quick prototyping, you can use our CDN:
-
-```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/ai-first-design-system@latest"></script>
 ```
 
 ## Quick Start
 
-### Vanilla JavaScript / Web Components
+### Web Components in a bundled app
+
+In a Vite project, put the package import and event handling in `src/main.js`:
+
+```js
+import 'ai-first-design-system';
+
+document.querySelector('ai-button').addEventListener('click', () => {
+  console.log('Button clicked!');
+});
+```
+
+Use its custom elements in `index.html`:
 
 ```html
 <!DOCTYPE html>
@@ -46,14 +48,7 @@ For quick prototyping, you can use our CDN:
     <ai-button variant="primary">Click me</ai-button>
     <ai-chat-message role="ai">Hello! How can I help you today?</ai-chat-message>
 
-    <script type="module">
-      import 'ai-first-design-system';
-
-      const button = document.querySelector('ai-button');
-      button.addEventListener('click', () => {
-        console.log('Button clicked!');
-      });
-    </script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
 ```

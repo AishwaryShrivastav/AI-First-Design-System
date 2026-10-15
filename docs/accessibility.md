@@ -1,10 +1,10 @@
 # Accessibility
 
-The AI-First Design System is built with accessibility as a core principle, not an afterthought.
+Accessibility is part of the component design and needs verification in each consuming product.
 
 ## Commitment
 
-All components meet **WCAG 2.2 Level AA** standards.
+The library has not been independently audited for **WCAG 2.2 Level AA** conformance. Test each component in your product, including its theme, content, and surrounding workflow, before making a compliance claim.
 
 **Reference:** [WCAG 2.2 Guidelines](https://www.w3.org/WAI/WCAG22/quickref/)
 
@@ -12,11 +12,11 @@ All components meet **WCAG 2.2 Level AA** standards.
 
 ### 1. Keyboard Navigation
 
-All interactive components are fully keyboard accessible:
+The components use keyboard patterns where implemented. Check these interactions in your product:
 
 - **Tab** - Move between interactive elements
 - **Enter/Space** - Activate buttons and controls
-- **Escape** - Close modals and dropdowns
+- **Escape** - Dismiss an open overlay where one is present
 - **Arrow Keys** - Navigate within components
 - **Cmd/Ctrl + Enter** - Submit in prompt inputs
 
