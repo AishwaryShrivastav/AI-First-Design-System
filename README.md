@@ -1,17 +1,17 @@
 # AI-First Design System
 
-> A comprehensive, open-source design system built specifically for AI products
+> Open-source UI components for prompts, streaming responses, explanations, and user control in AI products.
 
 ## 🎯 TL;DR
 
 **What**: Framework-agnostic Web Components for AI products  
 **Tech**: Lit + TypeScript + Tailwind CSS  
-**Why**: First design system built for AI from the ground up (not retrofitted)
+**Why**: Give AI interactions reusable, inspectable UI patterns.
 
 **Version**: 0.2.0  
-**Components**: 14 (all documented in Storybook)  
+**Components**: 18 Web Components
 **Install**: `npm install ai-first-design-system` (core), `npm install @ai-first-ds/react` (React), or `npm install @ai-first-ds/tokens` (tokens)
-**Docs**: Quick start below | [Full Guide](./docs/getting-started.md) | [Storybook Guide](./packages/storybook/STORYBOOK_GUIDE.md) | [Components](./.ai/component-index.md)
+**Docs**: [Live component preview](https://aishwaryshrivastav.github.io/AI-First-Design-System/) | [Quick start](./docs/getting-started.md) | [Component index](./.ai/component-index.md)
 
 [![npm version](https://badge.fury.io/js/ai-first-design-system.svg)](https://www.npmjs.com/package/ai-first-design-system)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -66,7 +66,7 @@ component_pattern: |
 
 - **🤖 AI-First by Design** - Purpose-built components for AI interactions, not retrofitted
 - **🌐 Framework Agnostic** - Works with React, Vue, Svelte, or vanilla JavaScript
-- **♿ Accessible** - WCAG 2.2 compliant, following WAI-ARIA patterns
+- **♿ Accessibility** - Components include keyboard and ARIA patterns; test them in your product context
 - **🎨 Customizable** - Extensive theming with Tailwind CSS and CSS custom properties
 - **📦 Lightweight** - Tree-shakeable, optimized bundle sizes
 - **📚 Well Documented** - Complete Storybook documentation for all components with interactive examples

@@ -18,6 +18,7 @@ const config: StorybookConfig = {
   },
   staticDirs: ['../public'],
   async viteFinal(config) {
+    config.base = process.env.STORYBOOK_BASE_PATH || '/';
     // Ensure proper resolution of package subpath exports
     config.resolve = config.resolve || {};
     config.resolve.alias = {
